@@ -11,7 +11,7 @@ date: 2020-01-29
 <img src="/assets/images/about/photo-portada.jpeg">
 </p>
 
-Mi nombre es Marcelo Vázquez (aka **s4vitar**), actualmente trabajo en **OneCyber**, una empresa de ciberseguridad la cual dedica la totalidad de sus recursos en proteger a los clientes de las múltiples ciber-amenazas emergentes, garantizando la continuidad de las operaciones.
+Mi nombre es Marcelo Vázquez (aka **jflabur**), actualmente trabajo en **OneCyber**, una empresa de ciberseguridad la cual dedica la totalidad de sus recursos en proteger a los clientes de las múltiples ciber-amenazas emergentes, garantizando la continuidad de las operaciones.
 
 Estas son las certificaciones que actualmente dispongo:
 
@@ -28,9 +28,9 @@ Estas son las certificaciones que actualmente dispongo:
 ## Material de apoyo
 Estos son los gists que he redactado como material de apoyo para aquellos que se quieran certificar del OSCP/OSWP, así como otras temáticas:
 
-- [Preparación OSCP](https://gist.github.com/s4vitar/b88fefd5d9fbbdcc5f30729f7e06826e)
-- [Preparación OSWP](https://gist.github.com/s4vitar/3b42532d7d78bafc824fb28a95c8a5eb)
-- [Cómo construir tu propio sistema Linux](https://gist.github.com/s4vitar/8a2b18ec1f1b16226e21d4b89cbef270)
+- [Preparación OSCP](https://gist.github.com/jflabur/b88fefd5d9fbbdcc5f30729f7e06826e)
+- [Preparación OSWP](https://gist.github.com/jflabur/3b42532d7d78bafc824fb28a95c8a5eb)
+- [Cómo construir tu propio sistema Linux](https://gist.github.com/jflabur/8a2b18ec1f1b16226e21d4b89cbef270)
 
 
 ## CVEs
@@ -65,17 +65,17 @@ Estos son los exploits que hasta la fecha de hoy tengo registrados:
 - Formador en Seguridad Informática (Redes inalámbricas, Pentesting y Exploiting)
 - Arquitecto de CTFs en varios eventos de ciberseguridad (Hackron, Cybercamp, CyberEx, Q4 - HackTheBox Latino, ...)
 - Colaborador del evento de ciberseguridad [Hackron](https://hackron.com) celebrado en Canarias
-- Creador de múltiples herramientas ofensivas y otras de utilidad ([Ver proyectos en GitHub](https://github.com/s4vitar))
+- Creador de múltiples herramientas ofensivas y otras de utilidad ([Ver proyectos en GitHub](https://github.com/jflabur))
 - Speaker e impartidor de taller en el evento Hackron 2019 - Canarias ([Enlace](https://hackron.com))
 - Speaker en el evento de ciberseguridad h-c0n 2020 - Madrid ([Enlace](https://h-c0n.com/p/biografias2020.html#MarceloVazquez))
 - Speaker en el evento de ciberseguridad CICSOH - Costa Rica ([Enlace](http://cicsoh.una.ac.cr/index.php/conferencistas/))
 - Speaker en el evento de ciberseguridad PwnedCR - Costa Rica
 - Speaker en el evento de ciberseguridad Hackron 2020 - Canarias ([Enlace](https://hackron.com))
-- Speaker en el evento OWASP - Universidad de La Laguna 
+- Speaker en el evento OWASP - Universidad de La Laguna
 - Speaker en el evento TACS - Congreso de Ciberseguridad
 - Autor de la web [https://www.mundo-hackers.weebly.com](https://mundo-hackers.weebly.com), con más de 200 artículos escritos
 - Competidor de CTFs, logrando posicionar a la Universidad de La Laguna entre el TOP 3 universidades en la plataforma [HackTheBox](https://hackthebox.eu)
-- Miembro de la plataforma [HackerOne](https://hackerone.com), con registro a día de hoy de una vulnerabilidad crítica reportada a la entidad Worklytics ([Ver Perfil](https://hackerone.com/s4vitar))
+- Miembro de la plataforma [HackerOne](https://hackerone.com), con registro a día de hoy de una vulnerabilidad crítica reportada a la entidad Worklytics ([Ver Perfil](https://hackerone.com/jflabur))
 - Colaborador de HackTheBox en la resolución y aporte de writeups de máquinas retiradas
 - Creador de contenido (cursos) en la academia MasterMind ([Enlace](https://mastermind.ac))
 
@@ -86,10 +86,10 @@ Estos son los exploits que hasta la fecha de hoy tengo registrados:
 - Webinar interactivo (HackTheBox Latino) - Resolvendo máquina personal presentada en el evento Q4, la cual no pudo ser resuelta por ninguno de los participantes: [Ver webinar](https://www.youtube.com/watch?v=5AmJtyBphVE)
 - Cómo ser un pentester a nivel profesional - Charla [Ver charla](https://www.facebook.com/hackingEtico18/videos/vb.1592676964151994/185438342573111)
 - Seguridad y Hacking por ipv6 - Charla [Ver charla](https://www.youtube.com/watch?v=A445hnKq9wk)
-- Hacking Q&A con S4vitar - Julio Ureña y Takito [Ver charla](https://www.youtube.com/watch?v=GZFoNfCpcQc)
+- Hacking Q&A con Jflabur - Julio Ureña y Takito [Ver charla](https://www.youtube.com/watch?v=GZFoNfCpcQc)
 - Charla h-c0n 2020 / evilTrust - Herramienta Ofensiva [Ver charla](https://www.youtube.com/watch?v=-GIA9et7ZRg)
 - evilTrust (Herramienta Ofensiva) - Charla h-c0n 2020: [Ver charla](https://www.youtube.com/watch?v=-GIA9et7ZRg)
-- Canal de ciberseguridad en YouTube con más de 7.000 suscriptores: [Ver canal](https://youtube.com/s4vitar)
+- Canal de ciberseguridad en YouTube con más de 7.000 suscriptores: [Ver canal](https://youtube.com/jflabur)
 - Consecuencias legales y Hacking Ético: [Ver publicación](https://internautas.org/html/10399.html)
 - Las pruebas médicas de miles de clínicas, accesibles en internet - Eldía.es [Ver publicación](https://www.eldia.es/sociedad/2020/02/21/pruebas-medicas-miles-clinicas-accesibles/1053880.html)
 - Secure Podcast - HackTheBox [Escuchar Podcast](https://securepodcast.com/audios/036/)
@@ -97,14 +97,14 @@ Estos son los exploits que hasta la fecha de hoy tengo registrados:
 # Herramientas
 Creador de las siguientes herramientas:
 
-- [evilTrust](https://github.com/s4vitar/evilTrust) (Herramienta ideal para el despliegue automatiado de un Rogue AP con capacidad de selección de plantilla + 2FA)
-- [spoofMe](https://github.com/s4vitar/spoofMe) (Programa ideal para el Spoofing de llamadas y mensajería instantánea desde terminal)
-- [wifiCrack](https://github.com/s4vitar/wifiCrack) (Herramienta ideal para automatizar ataques WiFi WPA/WPA2 - PSK destinados a la obtención de la contraseña. Incluye PKMID Clientless Attack)
-- [rpcenum](https://github.com/s4vitar/rpcenum) (Herramienta en Bash ideal para extraer la información más relevante de un dominio vía rpcclient)
-- [fastTCPScan](https://github.com/s4vitar/fastTCPScan) (Escáner que permite detectar de forma rápida y precisa los puertos TCP que una máquina tiene abiertos)
-- [htbExplorer](https://github.com/s4vitar/htbExplorer) (Cliente de terminal hecho en Bash ideal para trabajar cómodamente desde consola sobre la plataforma de HackTheBox)
-- [btcAnalyzer](https://github.com/s4vitar/btcAnalyzer) (Herramienta ideal para la inspección de transacciones en el servicio de exploración de bloques de Bitcoin)
-- [AD-AutomationLab](https://github.com/s4vitar/AD-AutomationLab) (Herramienta en PowerShell ideal para desplegar tu propio entorno AD vulnerable de forma automatizada)
+- [evilTrust](https://github.com/jflabur/evilTrust) (Herramienta ideal para el despliegue automatiado de un Rogue AP con capacidad de selección de plantilla + 2FA)
+- [spoofMe](https://github.com/jflabur/spoofMe) (Programa ideal para el Spoofing de llamadas y mensajería instantánea desde terminal)
+- [wifiCrack](https://github.com/jflabur/wifiCrack) (Herramienta ideal para automatizar ataques WiFi WPA/WPA2 - PSK destinados a la obtención de la contraseña. Incluye PKMID Clientless Attack)
+- [rpcenum](https://github.com/jflabur/rpcenum) (Herramienta en Bash ideal para extraer la información más relevante de un dominio vía rpcclient)
+- [fastTCPScan](https://github.com/jflabur/fastTCPScan) (Escáner que permite detectar de forma rápida y precisa los puertos TCP que una máquina tiene abiertos)
+- [htbExplorer](https://github.com/jflabur/htbExplorer) (Cliente de terminal hecho en Bash ideal para trabajar cómodamente desde consola sobre la plataforma de HackTheBox)
+- [btcAnalyzer](https://github.com/jflabur/btcAnalyzer) (Herramienta ideal para la inspección de transacciones en el servicio de exploración de bloques de Bitcoin)
+- [AD-AutomationLab](https://github.com/jflabur/AD-AutomationLab) (Herramienta en PowerShell ideal para desplegar tu propio entorno AD vulnerable de forma automatizada)
 
 ## Asistencias
 Asistente en los siguientes eventos de ciberseguridad:

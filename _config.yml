@@ -16,13 +16,13 @@ minimal_mistakes_skin    : "haxor" # "air", "aqua", "contrast", "dark", "dirt", 
 
 # Site Settings
 locale                   : "en-US"
-title                    : "s4vitar.io"
+title                    : "jflabur.io"
 title_separator          : "-"
-name                     : "S4vitar"
+name                     : "Jflabur"
 description              : "Artículos sobre ciberseguridad, CTFs e investigaciones"
-url                      : "https://s4vitar.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://jflabur.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "s4vitar/s4vitar.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "jflabur/jflabur.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 logo                     : "/assets/images/masthead.png"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 breadcrumbs              : true # true, false (default)
@@ -101,7 +101,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "S4vitar"
+  name             : "Jflabur"
   avatar           : "/assets/images/avatar.png"
   bio              : "Pentester / OSCP / OSWP / eWPTxv2"
   location         : "Tenerife"
@@ -114,23 +114,23 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "s4vitar"
+  github           : "jflabur"
   gitlab           :
   google_plus      :
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : "s4vitar" # (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
+  linkedin         : "jflabur" # (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
   pinterest        :
   soundcloud       :
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
   steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
   tumblr           :
-  twitter          : "s4vitar"
+  twitter          : "jflabur"
   vine             :
   weibo            :
   xing             :
-  youtube          : "https://youtube.com/c/s4vitar"
+  youtube          : "https://youtube.com/c/jflabur"
 
 
 # Reading Files
