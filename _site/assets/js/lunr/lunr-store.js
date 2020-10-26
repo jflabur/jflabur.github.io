@@ -64,7 +64,7 @@ var store = [{
         "tags": ["Pentesting","Herramientas","Windows","Linux","Domain Controller","Guías","Privilege Escalation"],
         "url": "http://localhost:4000/como-explotar-vulnerabilidad-zerologon/",
         "teaser":"http://localhost:4000/assets/images/zerologon/zerologon.png"},{
-        "title": "Mi experiencia con la certificación eWPTxv2",
+        "title": "Mi experiencia con la certificación eWPTxv2 tres y dos",
         "excerpt":"Certificación eWPTxv2 Mi experiencia personal Ya era hora de redactar este artículo… entre tantas cosas en las que ando metido no he podido sacar un rato para comentaros mi experiencia con esta certificación. Ahora que estoy algo menos ajetreado en esta noche de inspiración… vamos a analizar qué es lo...","categories": ["Certificaciones","Utilidades"],
         "tags": ["Pentesting","eWPTXv2","Web Exploiting","Web Penetration Testing","Examen"],
         "url": "http://localhost:4000/experiencia-eWPTx/",

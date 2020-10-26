@@ -1,21 +1,22 @@
 ---
+title: Mi experiencia con la certificación eWPTxv2 tres y dos
 layout: single
-title: Mi experiencia con la certificación eWPTxv2
-excerpt: "Recientemente me he sacado la certificación eWPTxv2, ¿qué tan difícil es?, ¿merece la pena pagar por esta certificación?"
-date: 2020-10-14
+excerpt: Recientemente me he sacado la certificación eWPTxv2, ¿qué tan difícil es?,
+  ¿merece la pena pagar por esta certificación?
+date: '2020-10-14'
 classes: wide
 header:
-  teaser: /assets/images/eWPTxv2/eWPTxv2.png
+  teaser: "/assets/images/eWPTxv2/eWPTxv2.png"
   teaser_home_page: true
 categories:
-  - Certificaciones
-  - Utilidades
+- Certificaciones
+- Utilidades
 tags:
-  - Pentesting
-  - eWPTXv2
-  - Web Exploiting
-  - Web Penetration Testing
-  - Examen
+- Pentesting
+- eWPTXv2
+- Web Exploiting
+- Web Penetration Testing
+- Examen
 ---
 
 <p align="center">
@@ -89,5 +90,3 @@ He estado pensando en hacer el AWAE (OSWE) de Offensive Security, así en caso d
 Como siempre, en paralelo seguiré subiendo vídeos al canal de YouTube y generando todo el contenido que pueda para vosotros.
 
 ¡A cuidarse!
-
-
