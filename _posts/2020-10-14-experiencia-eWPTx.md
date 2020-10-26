@@ -1,5 +1,5 @@
 ---
-title: Mi experiencia con la certificación eWPTxv2 y 666
+title: 888 Mi experiencia con la certificación
 layout: single
 excerpt: Recientemente me he sacado la certificación eWPTxv2, ¿qué tan difícil es?,
   ¿merece la pena pagar por esta certificación?
