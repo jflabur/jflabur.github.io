@@ -5,23 +5,23 @@
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
-<html lang="en" class="no-js">
+<html lang="es" class="no-js">
   <head>
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>popopp - jflabur.io</title>
-<meta name="description" content="popopopopop">
+<meta name="description" content="Índice y Estructura Principal">
 
 
 
 <meta property="og:type" content="article">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="jflabur.io">
 <meta property="og:title" content="popopp">
 <meta property="og:url" content="http://localhost:4000/popopp/">
 
 
-  <meta property="og:description" content="popopopopop">
+  <meta property="og:description" content="Índice y Estructura Principal">
 
 
 
@@ -317,7 +317,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="popopp">
-    <meta itemprop="description" content="popopopopop">
+    <meta itemprop="description" content="Índice y Estructura Principal">
     <meta itemprop="datePublished" content="October 26, 2020">
     
 
@@ -338,7 +338,144 @@
           
           
         </p>
-        <p>popopopopop</p>
+        <h2 id="índice-y-estructura-principal">Índice y Estructura Principal</h2>
+
+<ul>
+  <li><a href="#version-check">Version Check</a>
+    <ul>
+      <li><a href="#creando-nueva-particion">Creando nueva particion</a></li>
+    </ul>
+  </li>
+  <li><a href="#primero">primero</a></li>
+</ul>
+
+<h1 id="antecedentesss">Antecedentesss</h1>
+<p>Antes que nada, me gustaría comentar una serie de puntos para aquellos que pretenden seguir esta guía.</p>
+
+<h4 id="por-qué-crear-un-sistema-linux-desde-0-manualmente-en-vez-de-descargar-e-instalar-uno-existente">¿Por qué crear un sistema Linux desde 0 manualmente en vez de descargar e instalar uno existente?</h4>
+
+<p>Bueno, si te estás haciendo esta pregunta es que lo tuyo no es la curiosidad.</p>
+
+<p>La idea de esta guía es que te sirva de ayuda para entender y aprender cómo funciona un sistema Linux desde adentro hacia afuera. Construir un sistema LFS desde 0 te ayuda a entender qué hace que Linux funcione y cómo las cosas funcionan a bajo nivel.</p>
+
+<p>Aparte, una de las mejores cosas que se pueden sacar de provecho de todo esto es la capacidad de personalizar un sistema Linux para satisfacer tus propias necesidades únicas. No me considero un paranoico, pero en muchas distribuciones Linux no es la primera vez que me encuentro con un binario ya previamente compilado cuyo código no puedo ver (por no ser Open Source)… y a saber qué lleva dentro, igual hasta viene con regalo.</p>
+
+<p>En ese sentido, tal vez por pura prevención (y curiosidad), a veces es mejor tener el control de qué cosas son las que se están instalando en el sistema, ¿no crees?.</p>
+
+<h4 id="prerrequisitos">Prerrequisitos</h4>
+
+<p>Construir un sistema LFS no es una tarea simple. Para toda esta guía, se requiere un cierto nivel de conocimiento existente sobre la administración del sistema Unix. Si esto es así y se aplica para tu caso… a por ello.</p>
+
+<p>Otro de los requisitos que se requieren es la <strong>paciencia</strong>. Construir un sistema LFS no se hace en un día (creedme, lo he intentado), algunos paquetes tardan mucho en instalarse y hay algunas fases que de por sí requieren de tiempo.</p>
+
+<p>El tiempo estimado para construir tu propio sistema Linux oscila entre <strong>3 y 5 días</strong>, para que lo tengáis en cuenta.</p>
+
+<h1 id="introducción">INTRODUCCIÓN</h1>
+<h4 id="consideraciones">Consideraciones</h4>
+
+<p>Bueno antes de empezar, deciros que en mi caso voy a estar trabajando con VirtualBox.</p>
+
+<p>La pregunta que probablemente os hagáis es, ¿y no puedo usar VMware?, pues a ver, por poder podéis… PERO de las veces que he probado con VMware, justo en la fase final a la hora de hacer el Reboot… aparece un <strong>Kernel Panic</strong>, con el cual me estuve peleando en su momento y no encontré forma de arreglarlo.</p>
+
+<p>Si queréis no tener que estar lidiando con estos problemas, mi recomendación es que lo hagáis todo con <strong>Virtual Box</strong>. Por lo demás, hay que tener en cuenta que para construir tu propio sistema Linux, necesitas primero de una distribución Linux de base sobre la que trabajar, ya que es desde esta desde donde estaremos toqueteando nuestro nuevo disco duro virtual que posteriormente crearemos.</p>
+
+<p>En mi caso, estaré trabajando con un <strong>Debian 10.3.0 amd64</strong>, el cual puedes descargar desde la página oficial:</p>
+
+<ul>
+  <li>https://www.debian.org/distrib/netinst</li>
+</ul>
+
+<h2 id="version-check">Version Check</h2>
+
+<p>Una vez instalados todos los paquetes, ejecutaremos los siguientes comandos para crear una serie de links simbólicos necesarios para que todo funcione correctamente:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ln</span> <span class="nt">-svf</span> bison /usr/bin/yacc
+<span class="nb">ln</span> <span class="nt">-svf</span> gawk /usr/bin/awk
+</code></pre></div></div>
+
+<p>Ya con esto hecho, ejecutaremos el script <strong>version-check.sh</strong> previamente creado y analizamos si nos da algún error:</p>
+
+<p align="center">
+     <img src="https://funkyimg.com/i/346BS.png" />
+</p>
+<p><br /></p>
+
+<p>Como vemos, no se nos reporta ningún error… por lo que podremos continuar. Si en este punto se te arroja algún error, es que has metido la pata en algún sitio y no has instalado correctamente algún paquete necesario.</p>
+
+<p>¿Mi recomendación en este punto?, crea una instantánea, no vaya a ser que en breve la líes y tengas que volver a empezar desde 0… así por lo menos te das el margen de empezar desde aquí:</p>
+
+<p align="center">
+     <img src="https://funkyimg.com/i/346C9.png" />
+</p>
+<p><br /></p>
+
+<h2 id="creando-nueva-particion">Creando nueva particion</h2>
+
+<p>En este punto, ya con todo lo anterior correctamente configurado, lo que haremos será apagar la máquina virtual. Nos iremos a la configuración de nuestra máquina, y añadiremos un nuevo disco… donde irá el LFS:</p>
+
+<p align="center">
+     <img src="https://funkyimg.com/i/346Dx.png" />
+</p>
+<p>&lt;br</p>
+
+<p>Una vez más, será de tipo <strong>VDI</strong>. En la selección del tipo de almacenamiento en unidad de disco duro física, indicaremos que queremos trabajar con un tamaño fijo:</p>
+
+<p align="center">
+     <img src="https://funkyimg.com/i/346Dy.png" />
+</p>
+<p><br /></p>
+
+<p>Posteriormente, identificamos el <strong>VDI</strong> donde irá nuestro nuevo sistema Linux con un nombre descriptivo. Yo lo llamaré <strong>S4viOS</strong> (30 GB):</p>
+
+<p align="center">
+     <img src="https://funkyimg.com/i/346Dz.png" />
+</p>
+<p><br /></p>
+
+<p>Una vez creado, lo que hacemos es añadirlo justo debajo del ya existente correspondiente al Debian:</p>
+
+<p align="center">
+     <img src="https://funkyimg.com/i/346DA.png" />
+</p>
+<p><br /></p>
+
+<p>Una vez añadido, debería verse tal que así:</p>
+
+<p align="center">
+     <img src="https://funkyimg.com/i/346DB.png" />
+</p>
+<p><br /></p>
+
+<p>Si arrancamos el Debian, todo debería continuar funcionando correctamente.</p>
+
+<p>Al aplicar el comando <strong>lsblk</strong>, deberíamos ver una nueva partición en <strong>/dev/sdb</strong>, correspondiente a la que hemos creado para <strong>S4viOS</strong>:</p>
+
+<p align="center">
+     <img src="https://funkyimg.com/i/346DC.png" />
+</p>
+<p><br /></p>
+
+<p><strong>¡Importante en este punto antes de continuar!</strong>, como de aquí en adelante es probable que nos encontremos con fases de larga espera, lo mejor es quitar esto que nos sale cuando estamos inactivos:</p>
+
+<p align="center">
+     <img src="https://funkyimg.com/i/346EU.png" />
+</p>
+<p><br /></p>
+
+<p>No creo que nos haga mucha gracia que en una plena instalación se nos apague de pronto el equipo por inactividad. Para quitar este modo, buscamos ‘<strong>Energía</strong>’ en el buscador de herramientas, y ponemos la siguiente configuración:</p>
+
+<p align="center">
+     <img src="https://funkyimg.com/i/346F1.png" />
+</p>
+<p><br /></p>
+
+<h2 id="primero">primero</h2>
+
+<p>Una vez instalados todos los paquetes, ejecutaremos los siguientes comandos para crear una serie de links simbólicos necesarios para que todo funcione correctamente:</p>
+
+<p>¡Un saludo y que os sea leve!</p>
+
+<p>¡Un saludo y que os sea leve!</p>
 
         
       </section>

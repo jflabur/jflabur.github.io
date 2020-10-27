@@ -4,11 +4,6 @@ var store = [{
         "tags": ["Hospitales","Dicom","Radiant"],
         "url": "http://localhost:4000/hospital-dicom-exposure/",
         "teaser":"http://localhost:4000/assets/images/hospital-dicom/dicom.png"},{
-        "title": "Archivos de configuración de Bspwm",
-        "excerpt":"Para el que no sepa de lo que estamos hablando, toda la configuración que se define en este artículo es la detallada en el siguiente vídeo mi canal de YouTube: Cómo configurar un buen entorno de trabajo en Linux Algunos de vosotros me habéis contactado pidiéndome que subiera los archivos...","categories": ["YouTube","Utilidades","Configuración"],
-        "tags": ["Bspwm","Sxhkd","Compton","Polybar","Powerlevel10k"],
-        "url": "http://localhost:4000/bspwm-configuration-files/",
-        "teaser":"http://localhost:4000/assets/images/bspwm/bspwm-background.jpg"},{
         "title": "Bypassing de validación en Chatroulette",
         "excerpt":"Hoy os vengo a mostrar un bypassing de lo más absurdo en la plataforma de Chatroulette. Supongo que sabréis que a la hora de entrar en Chatroulette se lleva a cabo una especie de validación, donde te piden que sonrías para que tu cara quede registrada en el sistema y...","categories": ["Research"],
         "tags": ["Chatroulette","Burpsuite","Bypassing"],
@@ -59,13 +54,18 @@ var store = [{
         "tags": ["Linux","Linux From Scratch","LFS","Personalización","S4viOS"],
         "url": "http://localhost:4000/como-crear-un-sistema-linux/",
         "teaser":"http://localhost:4000/assets/images/s4viOS/s4viOS.png"},{
+        "title": "Cómo configurar un buen entorno de trabajo en Linux",
+        "excerpt":"Para el que no sepa de lo que estamos hablando, toda la configuración que se define en este artículo es la detallada en el siguiente vídeo mi canal de YouTube: Cómo configurar un buen entorno de trabajo en Linux Algunos de vosotros me habéis contactado pidiéndome que subiera los archivos...","categories": ["YouTube","Utilidades","Configuración"],
+        "tags": ["Bspwm","Sxhkd","Compton","Polybar","Powerlevel10k"],
+        "url": "http://localhost:4000/bspwm-configuration-files/",
+        "teaser":"http://localhost:4000/assets/images/bspwm/bspwm-background.jpg"},{
         "title": "Cómo explotar la vulnerabilidad Zerologon",
         "excerpt":"¿Es realmente crítico Zerologon? La respuesta es un si rotundo. No creo que haga falta a estas alturas comentar qué es Zerologon… ya existen montón de artículos a disposición detallando de forma técnica y ejecutiva en qué consiste la vulnerabilidad. Centrémonos en la explotación, ¿cómo se explota zerologon?, vamos a...","categories": ["Research","Utilidades","Exploits","Vulnerabilidades"],
         "tags": ["Pentesting","Herramientas","Windows","Linux","Domain Controller","Guías","Privilege Escalation"],
         "url": "http://localhost:4000/como-explotar-vulnerabilidad-zerologon/",
         "teaser":"http://localhost:4000/assets/images/zerologon/zerologon.png"},{
         "title": "popopp",
-        "excerpt":"popopopopop  ","categories": [],
+        "excerpt":"Índice y Estructura Principal Version Check Creando nueva particion primero Antecedentesss Antes que nada, me gustaría comentar una serie de puntos para aquellos que pretenden seguir esta guía. ¿Por qué crear un sistema Linux desde 0 manualmente en vez de descargar e instalar uno existente? Bueno, si te estás haciendo...","categories": [],
         "tags": [],
         "url": "http://localhost:4000/popopp/",
         "teaser":null}]

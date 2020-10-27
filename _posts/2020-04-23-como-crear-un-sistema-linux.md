@@ -1,22 +1,24 @@
 ---
-layout: single
 title: Cómo construir tu propio sistema Linux
-excerpt: "En este artículo, os enseño a crear vuestro propio sistema Linux desde cero, tomando completo control de las cosas que se instalan y arrancando el sistema como una nueva distribución."
-date: 2020-04-23
+layout: single
+excerpt: En este artículo, os enseño a crear vuestro propio sistema Linux desde cero,
+  tomando completo control de las cosas que se instalan y arrancando el sistema como
+  una nueva distribución.
+date: '2020-04-23'
 classes: wide
 header:
-  teaser: /assets/images/s4viOS/s4viOS.png
+  teaser: "/assets/images/s4viOS/s4viOS.png"
   teaser_home_page: true
 categories:
-  - Configuración
-  - Linux From Scratch
-  - LFS
+- Configuración
+- Linux From Scratch
+- LFS
 tags:
-  - Linux
-  - Linux From Scratch
-  - LFS
-  - Personalización
-  - S4viOS
+- Linux
+- Linux From Scratch
+- LFS
+- Personalización
+- S4viOS
 ---
 
 # Cómo construir tu propio sistema Linux (S4viOS)
@@ -59,7 +61,7 @@ Por alguna razón los eventos clickeables del índice desde esta página no son 
           * [Texinfo 4.7](#Texinfo)
           * [Xz 5.0.0](#Xz)
      * [Version Check](#version-check)
-- [Creando nueva partición](#creando-nueva-partición)
+- [Creando nueva particion](#creando-nueva-partición)
      * [Estructurando la partición con parted](#Estructurando-la-partición-con-parted)
 - [Descarga de paquetes para la creación del sistema base](#Descarga-de-paquetes-para-la-creación-del-sistema-base)
 - [Construyendo un sistema temporal](#Construyendo-un-sistema-temporal)

