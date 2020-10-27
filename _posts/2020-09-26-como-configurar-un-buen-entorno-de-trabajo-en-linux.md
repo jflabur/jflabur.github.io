@@ -19,6 +19,12 @@ tags:
 - Guías
 ---
 
+Muy buenas a todos soy jflabur y en esta ocasión os traigo un artículo un poco diferente, por lo menos en  cuanto a temática, no vamos a estar tocando open testing no todo es romper... 
+
+Cómo hago para que mi entorno de escritorio se vea tal y como se ve es decir yo no tengo escritorio todo  está vacío, yo no puedo hacer clic derecho ni puedo crear una carpeta desde directamente no puedo hacer clic derecho y darle a crear nueva carpeta todo lo tengo que hacer por consola yo lo que utilizo es Bspwm que es un gestor de ventanas más personalizabley mucho más avanzado que ib3 gaps sobre todo por el nivel de personalización.
+
+Yo no utilizo una bash  sino una zsh pero fusionada con Powerlevel 10k que me permite personalizar
+mucho más a fondo, y todo esto se personaliza a mano o sea que tiene su trabajo no os creáis que es simple pero al final tiene su recompensa
 ## Índice y Estructura Principal
    
 - [Introduccion](#introduccion)
@@ -70,11 +76,9 @@ tags:
 - [Instalando i3lock-fancy y imagemagick para el bloqueo de pantalla](#instalando-i3lock-fancy-y-imagemagick-para-el-bloqueo-de-pantalla)
 - [Lanzar proceso con sxhkd bajo un contexto privilegiado](#lanzar-proceso-con-sxhkd-bajo-un-contexto-privilegiado)
 
-
 Introduccion
 ===============================================================================================================================
 Antes que nada, me gustaría comentar una serie de puntos para aquellos que pretenden seguir esta guía.
-
 ## Instalando bspwm
 xxxxxxxxxxxxxxxxxxxxxxxx
 

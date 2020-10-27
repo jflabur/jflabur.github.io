@@ -55,7 +55,7 @@ var store = [{
         "url": "http://localhost:4000/como-explotar-vulnerabilidad-zerologon/",
         "teaser":"http://localhost:4000/assets/images/zerologon/zerologon.png"},{
         "title": "Cómo configurar un buen entorno de trabajo en Linux",
-        "excerpt":"Índice y Estructura Principal Introduccion Instalando bspwm Instalando dependencias de bspwm Instalando sxhkd Fijando archivos de configuracion para los servicios sxhkd y bspwm Configurando archivo ~/.xinitrc Instalando compton Creando configuracion para el manejo sobre aplicaciones Java Instalando feh Configurando el prefix a mod1 (Tecla Windows) Configurando fichero sxhkdrc Instalando Rofi...","categories": ["Certificaciones"],
+        "excerpt":"Muy buenas a todos soy jflabur y en esta ocasión os traigo un artículo un poco diferente, por lo menos en cuanto a temática, no vamos a estar tocando open testing no todo es romper… Cómo hago para que mi entorno de escritorio se vea tal y como se ve...","categories": ["Certificaciones"],
         "tags": ["OSCP","Offensive Security","Pentesting","Examen","Guías"],
         "url": "http://localhost:4000/como-configurar-un-buen-entorno-de-trabajo-en-linux/",
         "teaser":"http://localhost:4000/assets/images/oscp-preparation/oscp-logo.png"}]
