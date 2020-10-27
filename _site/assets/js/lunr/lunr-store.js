@@ -65,7 +65,7 @@ var store = [{
         "url": "http://localhost:4000/como-explotar-vulnerabilidad-zerologon/",
         "teaser":"http://localhost:4000/assets/images/zerologon/zerologon.png"},{
         "title": "popopp",
-        "excerpt":"Índice y Estructura Principal Version Check Creando nueva particion primero Antecedentesss Antes que nada, me gustaría comentar una serie de puntos para aquellos que pretenden seguir esta guía. ¿Por qué crear un sistema Linux desde 0 manualmente en vez de descargar e instalar uno existente? Bueno, si te estás haciendo...","categories": [],
+        "excerpt":"Índice y Estructura Principal Version Check Creando nueva particion Primero Introduccion Instalando bspwm Instalando dependencias de bspwm Instalando sxhkd Fijando archivos de configuración para los servicios sxhkd y bspwm Configurando archivo ~/.xinitrc Instalando compton Añadiendo configuración para el manejo sobre aplicaciones Java Instalación de feh Configurando el prefix a mod1...","categories": [],
         "tags": [],
         "url": "http://localhost:4000/popopp/",
         "teaser":null}]

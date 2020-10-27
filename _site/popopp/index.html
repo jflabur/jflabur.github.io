@@ -343,17 +343,71 @@
 <ul>
   <li><a href="#version-check">Version Check</a>
     <ul>
-      <li><a href="#creando-nueva-particion">Creando nueva particion</a></li>
+      <li><a href="#creando-nueva-particion">Creando nueva particion</a>
+        <ul>
+          <li><a href="#primero">Primero</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
-  <li><a href="#primero">primero</a></li>
+  <li><a href="#introduccion">Introduccion</a>
+    <ul>
+      <li><a href="#instalando-bspwm">Instalando bspwm</a></li>
+    </ul>
+  </li>
 </ul>
 
-<h1 id="antecedentesss">Antecedentesss</h1>
+<p>Instalando dependencias de bspwm
+Instalando sxhkd
+Fijando archivos de configuración para los servicios sxhkd y bspwm
+Configurando archivo ~/.xinitrc
+Instalando compton
+Añadiendo configuración para el manejo sobre aplicaciones Java
+Instalación de feh
+ Configurando el prefix a mod1 (Tecla Windows)
+ Configurando fichero sxhkdrc
+Instalación de Rofi
+Configurando utilidad de resize para el sxhkd (Creación de script personalizado)
+Entrando a bspwm con la configuración establecida
+Sincronizando compton con bspwm
+Creando fichero de configuración para compton
+Ajustando transparencia para algunos servicios
+Configurar floating window para el servicio deseado
+Configurando fondo de escritorio
+Añadiendo efecto blur al fondo con compton
+Configurando Polybar
+Creando launcher en Bash para Polybar
+Sincronizando Polybar con Bspwm
+Reinstalando Polybar con la versión 3.4.0 (La otra da problemas)
+Instalación de Hacker Nerd Fonts
+Lanzando Polybar
+Configurando fuente
+Configurando la Polybar
+Sincronizando fuente Hacker Nerd Fonts en la Polybar
+Creando nuestros propios módulos para la Polybar
+Configurando utilidad de HackTheBox en la Polybar
+Probando configuración de la Polybar
+Configurando transparencia de la Polybar
+Instalando Powerlevel10k y configurando consola ZSH
+Personalizando la Powerlevel10k
+Configurando nuestros propios iconos en la Powerlevel10k
+Cambiando el tipo de terminal para los usuarios existentes a nivel de sistema
+Creando link simbólico para el fichero .zshrc del usuario root
+Configurando el fichero .zshrc
+Instalando lsd (ls con esteroides)
+Centralizando en el .zshrc aliases para lsd
+Configurando utilidad ‘bat’ (cat con esteroides)
+Configurando man
+Instalando fzf para zsh
+Creando función personalizada para fzf en zsh
+Instalación de Plugins en ZSH
+Instalación de i3lock-fancy y imagemagick para el bloqueo de pantalla
+Lanzar proceso con sxhkd bajo un contexto privilegiado</p>
+
+<h1 id="introduccion">Introduccion</h1>
 <p>Antes que nada, me gustaría comentar una serie de puntos para aquellos que pretenden seguir esta guía.</p>
 
-<h4 id="por-qué-crear-un-sistema-linux-desde-0-manualmente-en-vez-de-descargar-e-instalar-uno-existente">¿Por qué crear un sistema Linux desde 0 manualmente en vez de descargar e instalar uno existente?</h4>
-
+<h2 id="instalando-bspwm">Instalando bspwm</h2>
 <p>Bueno, si te estás haciendo esta pregunta es que lo tuyo no es la curiosidad.</p>
 
 <p>La idea de esta guía es que te sirva de ayuda para entender y aprender cómo funciona un sistema Linux desde adentro hacia afuera. Construir un sistema LFS desde 0 te ayuda a entender qué hace que Linux funcione y cómo las cosas funcionan a bajo nivel.</p>
@@ -362,7 +416,7 @@
 
 <p>En ese sentido, tal vez por pura prevención (y curiosidad), a veces es mejor tener el control de qué cosas son las que se están instalando en el sistema, ¿no crees?.</p>
 
-<h4 id="prerrequisitos">Prerrequisitos</h4>
+<h2 id="prerrequisitos">Prerrequisitos</h2>
 
 <p>Construir un sistema LFS no es una tarea simple. Para toda esta guía, se requiere un cierto nivel de conocimiento existente sobre la administración del sistema Unix. Si esto es así y se aplica para tu caso… a por ello.</p>
 
@@ -370,8 +424,7 @@
 
 <p>El tiempo estimado para construir tu propio sistema Linux oscila entre <strong>3 y 5 días</strong>, para que lo tengáis en cuenta.</p>
 
-<h1 id="introducción">INTRODUCCIÓN</h1>
-<h4 id="consideraciones">Consideraciones</h4>
+<h2 id="consideraciones">Consideraciones</h2>
 
 <p>Bueno antes de empezar, deciros que en mi caso voy a estar trabajando con VirtualBox.</p>
 
