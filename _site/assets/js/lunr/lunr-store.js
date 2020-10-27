@@ -29,11 +29,6 @@ var store = [{
         "tags": ["WhatsApp","Canales Encubiertos"],
         "url": "http://localhost:4000/canal-encubierto-whatsapp/",
         "teaser":"http://localhost:4000/assets/images/whatsapp-canal-encubierto/whatsapp-banner.jpeg"},{
-        "title": "Preparación OSCP",
-        "excerpt":"Preparación para el OSCP (by s4vitar) Penetration Testing with Kali Linux (PWK) course and Offensive Security Certified Professional (OSCP) Cheat Sheet Esta guía es la misma que tengo publicada en mi Gist: https://gist.github.com/s4vitar/b88fefd5d9fbbdcc5f30729f7e06826e Índice y Estructura Principal Antecedentes - Experiencia Personal Buffer Overflow Windows (25 puntos) Fuzzing Calculando el Offset...","categories": ["Certificaciones"],
-        "tags": ["OSCP","Offensive Security","Pentesting","Examen","Guías"],
-        "url": "http://localhost:4000/oscp-preparacion/",
-        "teaser":"http://localhost:4000/assets/images/oscp-preparation/oscp-logo.png"},{
         "title": "Preparación OSWP",
         "excerpt":"Preparación para el OSWP (by s4vitar) Offensive Security Wireless Attacks (WiFu) course and Offensive Security Wireless Professional (OSWP) Cheat Sheet Esta guía es la misma que tengo publicada en mi Gist: https://gist.github.com/s4vitar/3b42532d7d78bafc824fb28a95c8a5eb Índice y Estructura Principal Antecedentes - Experiencia Personal Estructura de los apuntes Redes WPA Conceptos básicos Modo monitor...","categories": ["Certificaciones"],
         "tags": ["OSWP","Offensive Security","Pentesting","Examen","Guías"],
@@ -54,18 +49,13 @@ var store = [{
         "tags": ["Linux","Linux From Scratch","LFS","Personalización","S4viOS"],
         "url": "http://localhost:4000/como-crear-un-sistema-linux/",
         "teaser":"http://localhost:4000/assets/images/s4viOS/s4viOS.png"},{
-        "title": "Cómo configurar un buen entorno de trabajo en Linux",
-        "excerpt":"Para el que no sepa de lo que estamos hablando, toda la configuración que se define en este artículo es la detallada en el siguiente vídeo mi canal de YouTube: Cómo configurar un buen entorno de trabajo en Linux Algunos de vosotros me habéis contactado pidiéndome que subiera los archivos...","categories": ["YouTube","Utilidades","Configuración"],
-        "tags": ["Bspwm","Sxhkd","Compton","Polybar","Powerlevel10k"],
-        "url": "http://localhost:4000/bspwm-configuration-files/",
-        "teaser":"http://localhost:4000/assets/images/bspwm/bspwm-background.jpg"},{
         "title": "Cómo explotar la vulnerabilidad Zerologon",
         "excerpt":"¿Es realmente crítico Zerologon? La respuesta es un si rotundo. No creo que haga falta a estas alturas comentar qué es Zerologon… ya existen montón de artículos a disposición detallando de forma técnica y ejecutiva en qué consiste la vulnerabilidad. Centrémonos en la explotación, ¿cómo se explota zerologon?, vamos a...","categories": ["Research","Utilidades","Exploits","Vulnerabilidades"],
         "tags": ["Pentesting","Herramientas","Windows","Linux","Domain Controller","Guías","Privilege Escalation"],
         "url": "http://localhost:4000/como-explotar-vulnerabilidad-zerologon/",
         "teaser":"http://localhost:4000/assets/images/zerologon/zerologon.png"},{
-        "title": "popopp",
-        "excerpt":"Índice y Estructura Principal Version Check Creando nueva particion Primero Introduccion Instalando bspwm Instalando dependencias de bspwm Instalando sxhkd Fijando archivos de configuración para los servicios sxhkd y bspwm Configurando archivo ~/.xinitrc Instalando compton Añadiendo configuración para el manejo sobre aplicaciones Java Instalación de feh Configurando el prefix a mod1...","categories": [],
-        "tags": [],
-        "url": "http://localhost:4000/popopp/",
-        "teaser":null}]
+        "title": "Cómo configurar un buen entorno de trabajo en Linux",
+        "excerpt":"Índice y Estructura Principal Introduccion Instalando bspwm Instalando dependencias de bspwm Instalando sxhkd Fijando archivos de configuracion para los servicios sxhkd y bspwm Configurando archivo ~/.xinitrc Instalando compton Creando configuracion para el manejo sobre aplicaciones Java Instalando feh Configurando el prefix a mod1 (Tecla Windows) Configurando fichero sxhkdrc Instalando Rofi...","categories": ["Certificaciones"],
+        "tags": ["OSCP","Offensive Security","Pentesting","Examen","Guías"],
+        "url": "http://localhost:4000/como-configurar-un-buen-entorno-de-trabajo-en-linux/",
+        "teaser":"http://localhost:4000/assets/images/oscp-preparation/oscp-logo.png"}]

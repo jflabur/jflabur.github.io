@@ -1,0 +1,671 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.15.1 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="es" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Cómo configurar un buen entorno de trabajo en Linux - jflabur.io</title>
+<meta name="description" content="Para aquellos interesados en certificarse de OSCP, por aquí os dejo una guía hecha por mi donde de manera desglosada comentamos cada uno de los puntos importantes a tener en cuenta de cara a la examinación.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="jflabur.io">
+<meta property="og:title" content="Cómo configurar un buen entorno de trabajo en Linux">
+<meta property="og:url" content="http://localhost:4000/como-configurar-un-buen-entorno-de-trabajo-en-linux/">
+
+
+  <meta property="og:description" content="Para aquellos interesados en certificarse de OSCP, por aquí os dejo una guía hecha por mi donde de manera desglosada comentamos cada uno de los puntos importantes a tener en cuenta de cara a la examinación.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/oscp-preparation/oscp-logo.png">
+
+
+
+
+
+  <meta property="article:published_time" content="2020-09-26T01:00:00+02:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/como-configurar-un-buen-entorno-de-trabajo-en-linux/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jflabur",
+      "url": "http://localhost:4000",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="jflabur.io Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single wide">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/masthead.png" alt=""></a>
+                
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/" >Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/year-archive/" >Artículos</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/" >Categorías</a>
+            </li><li class="masthead__menu-item">
+              <a href="/tags/" >Etiquetas</a>
+            </li><li class="masthead__menu-item">
+              <a href="/videos/" >Vídeos</a>
+            </li><li class="masthead__menu-item">
+              <a href="/buscador/" >Buscador</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/" >Contacto</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+    
+
+    <div class="initial-content">
+      
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        <li class="current">Cómo configurar un buen entorno de trabajo en Linux</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/avatar.png" alt="Jflabur" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Jflabur</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        Pentester / OSCP / OSWP / eWPTxv2
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Tenerife</span>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:s4vipriv@gmail.com">
+            <meta itemprop="email" content="s4vipriv@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/jflabur" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/jflabur" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/jflabur" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        
+          <li>
+            <a href="https://youtube.com/c/jflabur" itemprop="sameAs" rel="nofollow noopener noreferrer">
+              <i class="fab fa-fw fa-youtube" aria-hidden="true"></i> YouTube
+            </a>
+          </li>
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Cómo configurar un buen entorno de trabajo en Linux">
+    <meta itemprop="description" content="Para aquellos interesados en certificarse de OSCP, por aquí os dejo una guía hecha por mi donde de manera desglosada comentamos cada uno de los puntos importantes a tener en cuenta de cara a la examinación.">
+    <meta itemprop="datePublished" content="September 26, 2020">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Cómo configurar un buen entorno de trabajo en Linux
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p class="page__meta">
+          
+            <i class="fa fa-fw fa-calendar" aria-hidden="true"></i> <time datetime="2020-09-26T01:00:00+02:00">September 26, 2020 </time>&emsp;
+          
+          
+        </p>
+        <h2 id="índice-y-estructura-principal">Índice y Estructura Principal</h2>
+
+<ul>
+  <li><a href="#introduccion">Introduccion</a></li>
+  <li><a href="#instalando-bspwm">Instalando bspwm</a></li>
+  <li><a href="#instalando-dependencias-de-bspwm">Instalando dependencias de bspwm</a></li>
+  <li><a href="#instalando-sxhkd">Instalando sxhkd</a></li>
+  <li><a href="#fijando-archivos-de-configuracion-para-los-servicios-sxhkd-y-bspwm">Fijando archivos de configuracion para los servicios sxhkd y bspwm</a></li>
+  <li><a href="#configurando-archivo-xinitrc">Configurando archivo ~/.xinitrc</a></li>
+  <li><a href="#instalando-compton">Instalando compton</a></li>
+  <li><a href="#creando-configuracion-para-el-manejo-sobre-aplicaciones-java">Creando configuracion para el manejo sobre aplicaciones Java</a></li>
+  <li><a href="#instalando-feh">Instalando feh</a></li>
+  <li><a href="#configurando-el-prefix-a-mod1-tecla-windows">Configurando el prefix a mod1 (Tecla Windows)</a></li>
+  <li><a href="#configurando-fichero-sxhkdrc">Configurando fichero sxhkdrc</a></li>
+  <li><a href="#instalando-rofi">Instalando Rofi</a></li>
+  <li><a href="#configurando-utilidad-de-resize-para-el-sxhkd-creando-script-personalizado">Configurando utilidad de resize para el sxhkd (Creando script personalizado)</a></li>
+  <li><a href="#entrando-a-bspwm-con-la-configuracion-establecida">Entrando a bspwm con la configuracion establecida</a></li>
+  <li><a href="#sincronizando-compton-con-bspwm">Sincronizando compton con bspwm</a></li>
+  <li><a href="#creando-fichero-de-configuracion-para-compton">Creando fichero de configuracion para compton</a></li>
+  <li><a href="#ajustando-transparencia-para-algunos-servicios">Ajustando transparencia para algunos servicios</a></li>
+  <li><a href="#configurando-floating-window-para-el-servicio-deseado">Configurando floating window para el servicio deseado</a></li>
+  <li><a href="#configurando-fondo-de-escritorio">Configurando fondo de escritorio</a></li>
+  <li><a href="#creando-efecto-blur-al-fondo-con-compton">Creando efecto blur al fondo con compton</a></li>
+  <li><a href="#configurando-polybar">Configurando Polybar</a></li>
+  <li><a href="#creando-launcher-en-bash-para-polybar">Creando launcher en Bash para Polybar</a></li>
+  <li><a href="#sincronizando-polybar-con-bspwm">Sincronizando Polybar con Bspwm</a></li>
+  <li><a href="#reinstalando-polybar-con-la-version-340-la-otra-da-problemas">Reinstalando Polybar con la version 3.4.0 (La otra da problemas)</a></li>
+  <li><a href="#instalando-fuente-de-hacker-nerd-fonts">Instalando fuente de Hacker Nerd Fonts</a></li>
+  <li><a href="#lanzando-polybar">Lanzando Polybar</a></li>
+  <li><a href="#configurando-fuente">Configurando fuente</a></li>
+  <li><a href="#configurando-la-polybar">Configurando la Polybar</a></li>
+  <li><a href="#sincronizando-fuente-hacker-nerd-fonts-en-la-polybar">Sincronizando fuente Hacker Nerd Fonts en la Polybar</a></li>
+  <li><a href="#creando-nuestros-propios-modulos-para-la-polybar">Creando nuestros propios modulos para la Polybar</a></li>
+  <li><a href="#configurando-utilidad-de-hackthebox-en-la-polybar">Configurando utilidad de HackTheBox en la Polybar</a></li>
+  <li><a href="#probando-configuracion-de-la-polybar">Probando configuracion de la Polybar</a></li>
+  <li><a href="#configurando-transparencia-de-la-polybar">Configurando transparencia de la Polybar</a></li>
+  <li><a href="#instalando-powerlevel10k-y-configurando-consola-zsh">Instalando Powerlevel10k y configurando consola ZSH</a></li>
+  <li><a href="#personalizando-la-powerlevel10k">Personalizando la Powerlevel10k</a></li>
+  <li><a href="#configurando-nuestros-propios-iconos-en-la-powerlevel10k">Configurando nuestros propios iconos en la Powerlevel10k</a></li>
+  <li><a href="#cambiando-el-tipo-de-terminal-para-los-usuarios-existentes-a-nivel-de-sistema">Cambiando el tipo de terminal para los usuarios existentes a nivel de sistema</a></li>
+  <li><a href="#creando-enlace-simbolico-para-el-fichero-zshrc-del-usuario-root">Creando enlace simbolico para el fichero .zshrc del usuario root</a></li>
+  <li><a href="#configurando-el-fichero-zshrc">Configurando el fichero .zshrc</a></li>
+  <li><a href="#instalando-lsd-ls-con-esteroides">Instalando lsd (ls con esteroides)</a></li>
+  <li><a href="#centralizando-en-el-zshrc-aliases-para-lsd">Centralizando en el .zshrc aliases para lsd</a></li>
+  <li><a href="#configurando-utilidad-bat-cat-con-esteroides">Configurando utilidad ‘bat’ (cat con esteroides)</a></li>
+  <li><a href="#configurando-man">Configurando man</a></li>
+  <li><a href="#instalando-fzf-para-zsh">Instalando fzf para zsh</a></li>
+  <li><a href="#creando-funcion-personalizada-para-fzf-en-zsh">Creando funcion personalizada para fzf en zsh</a></li>
+  <li><a href="#instalando-plugins-en-zsh">Instalando Plugins en ZSH</a></li>
+  <li><a href="#instalando-i3lock-fancy-y-imagemagick-para-el-bloqueo-de-pantalla">Instalando i3lock-fancy y imagemagick para el bloqueo de pantalla</a></li>
+  <li><a href="#lanzar-proceso-con-sxhkd-bajo-un-contexto-privilegiado">Lanzar proceso con sxhkd bajo un contexto privilegiado</a></li>
+</ul>
+
+<h1 id="introduccion">Introduccion</h1>
+<p>Antes que nada, me gustaría comentar una serie de puntos para aquellos que pretenden seguir esta guía.</p>
+
+<h2 id="instalando-bspwm">Instalando bspwm</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="instalando-dependencias-de-bspwm">Instalando dependencias de bspwm</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+
+<p align="center">
+     <img src="https://funkyimg.com/i/346F1.png" />
+</p>
+<p><br /></p>
+
+<h2 id="instalando-sxhkd">Instalando sxhkd</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="fijando-archivos-de-configuracion-para-los-servicios-sxhkd-y-bspwm">Fijando archivos de configuracion para los servicios sxhkd y bspwm</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="configurando-archivo-xinitrc">Configurando archivo ~/.xinitrc</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="instalando-compton">Instalando compton</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="creando-configuracion-para-el-manejo-sobre-aplicaciones-java">Creando configuracion para el manejo sobre aplicaciones Java</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="instalando-feh">Instalando feh</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="configurando-el-prefix-a-mod1-tecla-windows">Configurando el prefix a mod1 (Tecla Windows)</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="configurando-fichero-sxhkdrc">Configurando fichero sxhkdrc</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="instalando-rofi">Instalando Rofi</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="configurando-utilidad-de-resize-para-el-sxhkd-creando-script-personalizado">Configurando utilidad de resize para el sxhkd (Creando script personalizado)</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="entrando-a-bspwm-con-la-configuracion-establecida">Entrando a bspwm con la configuracion establecida</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="sincronizando-compton-con-bspwm">Sincronizando compton con bspwm</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="creando-fichero-de-configuracion-para-compton">Creando fichero de configuracion para compton</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="ajustando-transparencia-para-algunos-servicios">Ajustando transparencia para algunos servicios</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="configurando-floating-window-para-el-servicio-deseado">Configurando floating window para el servicio deseado</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="configurando-fondo-de-escritorio">Configurando fondo de escritorio</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="creando-efecto-blur-al-fondo-con-compton">Creando efecto blur al fondo con compton</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="configurando-polybar">Configurando Polybar</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="creando-launcher-en-bash-para-polybar">Creando launcher en Bash para Polybar</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="sincronizando-polybar-con-bspwm">Sincronizando Polybar con Bspwm</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="reinstalando-polybar-con-la-version-340-la-otra-da-problemas">Reinstalando Polybar con la version 3.4.0 (La otra da problemas)</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="instalando-fuente-de-hacker-nerd-fonts">Instalando fuente de Hacker Nerd Fonts</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="lanzando-polybar">Lanzando Polybar</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="configurando-fuente">Configurando fuente</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="configurando-la-polybar">Configurando la Polybar</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="sincronizando-fuente-hacker-nerd-fonts-en-la-polybar">Sincronizando fuente Hacker Nerd Fonts en la Polybar</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="creando-nuestros-propios-modulos-para-la-polybar">Creando nuestros propios modulos para la Polybar</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="configurando-utilidad-de-hackthebox-en-la-polybar">Configurando utilidad de HackTheBox en la Polybar</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="probando-configuracion-de-la-polybar">Probando configuracion de la Polybar</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="configurando-transparencia-de-la-polybar">Configurando transparencia de la Polybar</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="instalando-powerlevel10k-y-configurando-consola-zsh">Instalando Powerlevel10k y configurando consola ZSH</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="personalizando-la-powerlevel10k">Personalizando la Powerlevel10k</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="configurando-nuestros-propios-iconos-en-la-powerlevel10k">Configurando nuestros propios iconos en la Powerlevel10k</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="cambiando-el-tipo-de-terminal-para-los-usuarios-existentes-a-nivel-de-sistema">Cambiando el tipo de terminal para los usuarios existentes a nivel de sistema</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="creando-enlace-simbolico-para-el-fichero-zshrc-del-usuario-root">Creando enlace simbolico para el fichero .zshrc del usuario root</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="configurando-el-fichero-zshrc">Configurando el fichero .zshrc</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="instalando-lsd-ls-con-esteroides">Instalando lsd (ls con esteroides)</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="centralizando-en-el-zshrc-aliases-para-lsd">Centralizando en el .zshrc aliases para lsd</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="configurando-utilidad-bat-cat-con-esteroides">Configurando utilidad ‘bat’ (cat con esteroides)</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="configurando-man">Configurando man</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="instalando-fzf-para-zsh">Instalando fzf para zsh</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="creando-funcion-personalizada-para-fzf-en-zsh">Creando funcion personalizada para fzf en zsh</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="instalando-plugins-en-zsh">Instalando Plugins en ZSH</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="instalando-i3lock-fancy-y-imagemagick-para-el-bloqueo-de-pantalla">Instalando i3lock-fancy y imagemagick para el bloqueo de pantalla</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<h2 id="lanzar-proceso-con-sxhkd-bajo-un-contexto-privilegiado">Lanzar proceso con sxhkd bajo un contexto privilegiado</h2>
+<p>xxxxxxxxxxxxxxxxxxxxxx</p>
+
+<p>¡Un saludo y que os sea leve!</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#examen" class="page__taxonomy-item" rel="tag">Examen</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#gu%C3%ADas" class="page__taxonomy-item" rel="tag">Guías</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#offensive-security" class="page__taxonomy-item" rel="tag">Offensive Security</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#oscp" class="page__taxonomy-item" rel="tag">OSCP</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#pentesting" class="page__taxonomy-item" rel="tag">Pentesting</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#certificaciones" class="page__taxonomy-item" rel="tag">Certificaciones</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Fecha:</strong> <time datetime="2020-09-26T01:00:00+02:00">September 26, 2020</time></p>
+        
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/como-explotar-vulnerabilidad-zerologon/" class="pagination--pager" title="Cómo explotar la vulnerabilidad Zerologon
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+</div>
+
+    </div>
+
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2020 Jflabur</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script data-search-pseudo-elements defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>
