@@ -31,7 +31,7 @@ class SearchEntry:
 
 
 api_url = 'https://www.googleapis.com/youtube/v3/'
-channel_id = 'UCNHWpNqiM8yOQcHXtsluD7Q'
+channel_id = 'UCd6_u0-TrkUcYUACSXuTdkA'
 
 
 def GetUploadPlaylist(api_key):
