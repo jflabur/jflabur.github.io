@@ -49,10 +49,10 @@ var store = [{
         "tags": ["Linux","Linux From Scratch","LFS","Personalización","S4viOS"],
         "url": "http://localhost:4000/como-crear-un-sistema-linux/",
         "teaser":"http://localhost:4000/assets/images/s4viOS/s4viOS.png"},{
-        "title": "Cómo explotar la vulnerabilidad Zerologon",
-        "excerpt":"¿Es realmente crítico Zerologon? La respuesta es un si rotundo. No creo que haga falta a estas alturas comentar qué es Zerologon… ya existen montón de artículos a disposición detallando de forma técnica y ejecutiva en qué consiste la vulnerabilidad. Centrémonos en la explotación, ¿cómo se explota zerologon?, vamos a...","categories": ["Research","Utilidades","Exploits","Vulnerabilidades"],
+        "title": "HackTheBox Jewel",
+        "excerpt":"Column Detalles Name Jewel IP 10.10.10.211 Points 30 Os Linux Medium Hard Creator polarbearer Out On 10 Oct 2020 Resumen Nmap muestra los 3 puertos abiertos. Conseguir el web server Inyecctando la Shell en el servidor Conseguir la Shell desde el servidor Conseguir el password de la cuenta de bill...","categories": ["Utilidades","Exploits","Vulnerabilidades","HackTheBox"],
         "tags": ["Pentesting","Herramientas","Windows","Linux","Domain Controller","Guías","Privilege Escalation"],
-        "url": "http://localhost:4000/como-explotar-vulnerabilidad-zerologon/",
+        "url": "http://localhost:4000/hackthebox-jewel/",
         "teaser":"http://localhost:4000/assets/images/zerologon/zerologon.png"},{
         "title": "Cómo configurar un buen entorno de trabajo en Linux",
         "excerpt":"Muy buenas a todos soy jflabur y en esta ocasión os traigo un artículo un poco diferente, por lo menos en cuanto a temática, no vamos a estar tocando open testing no todo es romper… Cómo hago para que mi entorno de escritorio se vea tal y como se ve...","categories": ["Certificaciones"],
