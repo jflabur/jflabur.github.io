@@ -4,7 +4,7 @@ locale: es-ES
 title: jflabur.io
 title_separator: '-'
 name: Jflabur
-description: 'Artículos sobre ciberseguridad, CTFs e investigaciones '
+description: 'Artículos sobre ciberseguridad, CTFs e investigaciones'
 url: 'https://jflabur.github.io'
 baseurl: null
 repository: jflabur/jflabur.github.io
