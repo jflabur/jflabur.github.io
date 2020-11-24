@@ -500,7 +500,7 @@ class Pathutil
 
     else
       File.read(
-        self, *args, kwd
+        self, *args, **kwd
       )
     end
   end

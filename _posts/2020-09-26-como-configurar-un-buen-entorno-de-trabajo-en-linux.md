@@ -1,22 +1,18 @@
 ---
 title: Cómo configurar un buen entorno de trabajo en Linux
 layout: single
-excerpt: Para aquellos interesados en certificarse de OSCP, por aquí os dejo una guía
-  hecha por mi donde de manera desglosada comentamos cada uno de los puntos importantes
-  a tener en cuenta de cara a la examinación.
+excerpt: Yo no utilizo una bash  sino una zsh pero fusionada con Powerlevel 10k que
+  me permite personalizar mucho más a fondo.
 date: '2020-09-26 01:00:00'
 classes: wide
 header:
-  teaser: "/assets/images/oscp-preparation/oscp-logo.png"
+  teaser: "/assets/images/como-configurar-un-buen-entorno-de-trabajo-en-linux/graffiti_logo.png"
   teaser_home_page: true
 categories:
-- Certificaciones
+- Utilidades
 tags:
-- OSCP
-- Offensive Security
-- Pentesting
-- Examen
 - Guías
+- Linux
 ---
 
 Muy buenas a todos soy jflabur y en esta ocasión os traigo un artículo un poco diferente, por lo menos en  cuanto a temática, no vamos a estar tocando open testing no todo es romper... 

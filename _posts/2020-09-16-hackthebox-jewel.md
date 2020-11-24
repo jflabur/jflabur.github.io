@@ -6,7 +6,7 @@ excerpt: Mucho se está hablando acerca de la nueva vulnerabilidad Zerologon, pe
 date: '2020-09-16'
 classes: wide
 header:
-  teaser: "/assets/images/zerologon/zerologon.png"
+  teaser: "/assets/images/jewel/jewel.png"
   teaser_home_page: true
 categories:
 - Utilidades

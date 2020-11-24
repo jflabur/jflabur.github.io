@@ -37,8 +37,8 @@ module JekyllAdmin
       # Raw configuration content, as it sits on disk
       def raw_configuration
         File.read(
-          configuration_path,
-          Jekyll::Utils.merged_file_read_opts(site, {})
+          *configuration_path,
+          **Jekyll::Utils.merged_file_read_opts(site, {})
         )
       end
 
