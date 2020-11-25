@@ -1,1 +1,5 @@
-[{"machine": "HackTheBox - SwagShop [OSCP Style]", "videoId": "zf8twytOnvY", "timestamp": {"minutes": 0, "seconds": 0}, "line": " Introducci\u00f3n"}, {"machine": "HackTheBox - SwagShop [OSCP Style]", "videoId": "zf8twytOnvY", "timestamp": {"minutes": 3, "seconds": 2}, "line": " Uso de htbExplorer para descargar la VPN"}, {"machine": "HackTheBox - SwagShop [OSCP Style]", "videoId": "zf8twytOnvY", "timestamp": {"minutes": 4, "seconds": 35}, "line": " Listando las propiedades de la m\u00e1quina con htbExplorer"}]
+[
+{"machine": "HackTheBox - SwagShop [OSCP Style]", "videoId": "zf8twytOnvY", "timestamp": {"minutes": 0, "seconds": 0}, "line": " Introducci\u00f3n"},
+{"machine": "HackTheBox - SwagShop [OSCP Style]", "videoId": "zf8twytOnvY", "timestamp": {"minutes": 3, "seconds": 2}, "line": " Uso de htbExplorer para descargar la VPN"},
+{"machine": "HackTheBox - SwagShop [OSCP Style]", "videoId": "zf8twytOnvY", "timestamp": {"minutes": 4, "seconds": 35}, "line": " Listando las propiedades de la máquina m\u00e1quina con htbExplorer"}
+]
